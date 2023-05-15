@@ -16,21 +16,21 @@ function aboutPage() {
                     <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">
                         Full-Stack Software Developer
                     </div>
-                    <div className="text-1xl gap-1 md:text-2xl flex flex-col relative md:grid " style={{ gridTemplateColumns: '50% 50%', gridTemplateRows: '50% 50%'}}>
+                    <div className="text-1xl md:text-2xl flex flex-col relative md:grid " style={{ gridTemplateColumns: '50% 50%', gridTemplateRows: '50% 50%'}}>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
-                            <div><span className="font-bold">Phone:</span>&nbsp;(972) 697-6657</div>
+                            <div>&#8250; &nbsp;<span className="font-bold">Phone:</span>&nbsp;(972) 697-6657</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
-                            <div><span className="font-bold">Email:</span>&nbsp;li.jeffreyt@yahoo.com</div>
+                            <div>&#8250; &nbsp;<span className="font-bold">Email:</span>&nbsp;li.jeffreyt@yahoo.com</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
-                            <div><span className="font-bold">City:</span>&nbsp;Houston</div>
+                            <div>&#8250; &nbsp;<span className="font-bold">City:</span>&nbsp;Houston</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
-                            <div><span className="font-bold">Freelance:</span>&nbsp;Available</div>
+                            <div>&#8250; &nbsp;<span className="font-bold">Freelance:</span>&nbsp;Available</div>
                         </div>
                     </div>
-                    <div className="mb-4 mt-4 md:text-2xl ">I aim to create innovative solutions to the benefit of both users and business through consistently utilizing my growing expertise in full-stack development.</div>
+                    <div className="mb-4 mt-4 md:text-2xl ">I aim to create innovative solutions to the benefit of both users and businesses through consistently utilizing my growing expertise in full-stack development.</div>
                     <div className="mb-4 mt-4 md:text-2xl ">I strive to create a work environment that is supportive and collaborative. By promoting open and effective communication, I seek to cultivate a culture of teamwork that encourages constructive feedback to fuel innovation and progress.</div>
                     <div className="mb-4 mt-4 md:text-2xl ">My goal, as a young professional, is to earn the trust and reliability of the development community while utilizing my skills to assist others in accomplishing their professional objectives.</div>
                 </div>
