@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function aboutPage() {
   return (
-    <div className="bg-gray-500/75 p-4 " >
+    <div className="bg-gray-500/75 p-3 md:p-4 " >
         <div className="flex relative justify-left items-center ">
             <div className="text-5xl lineafter">About</div>&nbsp;
         </div>
