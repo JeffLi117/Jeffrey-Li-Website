@@ -8,10 +8,26 @@ html {
     background-image: url("../public/desk.jpg");
     background-repeat:no-repeat;
     background-size:cover;
+    background-position-x: center;
 }
 
-@media screen and (max-width: 500px) {
-    html {
-        background-position-x: center;
+.lineafter::after {
+    position: absolute;
+    top: 60%;
+    display: inline-block;
+    content: "";
+    border-top: 2px solid azure;
+    width: 4rem;
+    margin: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .imageHolder {
+        margin: auto 0;
     }
- }
+    .myhead {
+        position: static;
+        min-width: 90%;
+        display: block;
+    }
+}

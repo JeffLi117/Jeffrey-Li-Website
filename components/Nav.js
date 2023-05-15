@@ -2,18 +2,18 @@ import Link from "next/link";
 
 function Nav() {
   return (
-    <div className="sticky top-0 flex justify-left items-center gap-4 mb-7" >
+    <div className="absolute top-2 flex justify-left items-center gap-4" >
         <Link href='/' >
-            Home
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">Home</div>
         </Link>
         <Link href='/about' >
-            About
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">About</div>
         </Link>
         <Link href='/resume' >
-            Resume
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">Resume</div>
         </Link>
         <Link href='/portfolio' >
-            Portfolio
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">Portfolio</div>
         </Link>
     </div>
   )
