@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html {
+    color:azure;
+    height: 100%;
     background-image: url("../public/desk.jpg");
     background-repeat:no-repeat;
     background-size:cover;
 }
+
+@media screen and (max-width: 500px) {
+    html {
+        background-position-x: center;
+    }
+ }
