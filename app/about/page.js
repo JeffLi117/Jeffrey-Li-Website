@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 function aboutPage() {
   return (
     <div className="bg-gray-500/75 p-3 md:p-4 " >

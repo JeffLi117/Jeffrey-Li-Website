@@ -12,13 +12,19 @@ html {
     background-attachment: fixed;
 }
 
+.stack-image-holder {
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+}
+
 .lineafter::after {
     position: absolute;
     top: 60%;
     display: inline-block;
     content: "";
     border-top: 2px solid azure;
-    width: 4rem;
+    width: 2.5rem;
     margin: 0 1rem;
 }
 
@@ -30,5 +36,14 @@ html {
         position: static;
         min-width: 90%;
         display: block;
+    }
+    .lineafter::after {
+        position: absolute;
+        top: 60%;
+        display: inline-block;
+        content: "";
+        border-top: 2px solid azure;
+        width: 4rem;
+        margin: 0 1rem;
     }
 }
