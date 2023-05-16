@@ -28,6 +28,20 @@ html {
     margin: 0 1rem;
 }
 
+li.bulleted-header {
+    color:aquamarine; 
+}
+
+li.bulleted-header span {
+    color:aquamarine; 
+}
+
+li span {
+    margin-left: -0.65em;
+    color: azure;
+}
+
+
 @media (min-width: 768px) {
     .imageHolder {
         margin: auto 0;
