@@ -41,6 +41,42 @@ li span {
     color: azure;
 }
 
+li.portfolio-header a {
+    transition: color 0.26s ease-in;
+}
+
+a:link, a:visited {
+    color: aquamarine;
+}
+
+a:hover {
+    color:aqua;
+}
+
+a:active {
+    color:purple;
+}
+
+.contact-hover:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+      
+      30%, 50%, 70% {
+        transform: translate3d(-2px, 0, 0);
+      }
+      40%, 60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
 
 @media (min-width: 768px) {
     .imageHolder {

@@ -15,6 +15,9 @@ function Nav() {
         <Link href='/portfolio' >
             <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">Portfolio</div>
         </Link>
+        <Link href='/contact' >
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">Contact</div>
+        </Link>
     </div>
   )
 }

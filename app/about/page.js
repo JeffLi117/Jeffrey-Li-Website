@@ -15,7 +15,7 @@ function aboutPage() {
                     <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">
                         Full-Stack Software Developer
                     </div>
-                    <div className="text-1xl md:text-2xl flex flex-col relative md:grid " style={{ gridTemplateColumns: '50% 50%', gridTemplateRows: '50% 50%'}}>
+                    <div className="text-1xl flex about-contact flex-col relative md:text-2xl ">
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
                             <div>&#8250; &nbsp;<span className="font-bold">Phone:</span>&nbsp;(972) 697-6657</div>
                         </div>
@@ -23,7 +23,7 @@ function aboutPage() {
                             <div>&#8250; &nbsp;<span className="font-bold">Email:</span>&nbsp;li.jeffreyt@yahoo.com</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
-                            <div>&#8250; &nbsp;<span className="font-bold">City:</span>&nbsp;Houston</div>
+                            <div>&#8250; &nbsp;<span className="font-bold">Location:</span>&nbsp;Houston,&nbsp;TX</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
                             <div>&#8250; &nbsp;<span className="font-bold">Freelance:</span>&nbsp;Available</div>
