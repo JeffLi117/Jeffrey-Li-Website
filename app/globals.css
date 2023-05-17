@@ -17,6 +17,7 @@ body {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -24,6 +25,10 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+.navbar-main div {
+    text-underline-position: under;
 }
 
 .fade-test {

@@ -1,11 +1,11 @@
 "use client";
-
+ 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Pathname from "@/app/pathname";
 
 function Nav() {
-  const router = useRouter();
+  let pathname = Pathname().props.children;
 
   const [clicked, setClicked] = useState({
     home: false,
@@ -25,17 +25,16 @@ function Nav() {
     })
     setClicked(newObj);
   }
-//   useEffect(() => {
-//     setClicked({
-//         home: true,
-//         about: false,
-//         resume: false,
-//         portfolio: false,
-//         contact: false,
-//       })
-//   }, [])
+  useEffect(() => {
+    if (pathname === "/") {
+      pathname = "home"
+    } else {
+      pathname = pathname.slice(1);
+    }
+    handlerClick(pathname);
+  }, [])
   return (
-    <div className="absolute top-2 flex justify-center items-center gap-2 md:gap-4 md:justify-left " >
+    <div className="absolute top-2 flex justify-center items-center gap-2 md:gap-4 md:justify-left navbar-main" >
         <Link href='/' onClick={() => {handlerClick("home")}}>
             <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.home ? "aqua" : "aquamarine"}`, opacity: `${clicked.home ? "1" : "0.75"}`, textDecoration: `${clicked.home ? "underline" : "none"}`}}>Home</div>
         </Link>
