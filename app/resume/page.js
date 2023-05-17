@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
 
 function resumePage() {
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    setFade(false);
+  }, [])
   return (
-    <div className="bg-gray-500/75 p-3 md:p-4 ">
+    <div className="bg-gray-500/75 p-3 rounded-xl md:p-4 lg:w-3/4 fade-test" style={{ opacity:`${fade ? "0" : "1"}` }}>
         <div className="flex relative justify-left items-center ">
             <div className="text-5xl lineafter">Resume</div>&nbsp;
         </div>
@@ -34,13 +43,19 @@ as a Certified Professional in Patient Safety</span></li>
             <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">Education</div>
               <li className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Full-Stack Software Developer</span></li>
               <div className="m-3 mb-2 font-semibold">The Odin Project</div>
-              <div className="m-3">An immersive course on full-stack software development. By following their comprehensive full-stack curriculum, I gained proficiency in front-end and back-end technologies, along with a solid foundation in computer science principles.</div>
+              <li className="mx-3 mb-1"><span>An immersive course on full-stack software development</span></li>
+              <li className="mx-3 mb-1"><span>Gained proficiency in front-end and back-end technologies, along with a solid foundation in CS principles</span></li>
 
               <li className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Doctor Of Osteopathic Medicine</span></li>
               <div className="m-3 mb-2 font-semibold">Texas College Of Osteopathic Medicine</div>
+              <li className="mx-3 mb-1"><span>Certified Professional in Patient Safety</span></li>
 
               <li className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Master Of Medical Sciences</span></li>
               <div className="m-3 mb-2 font-semibold">University of North Texas Health Science Center</div>
+
+              <li className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Bachelor of Science</span></li>
+              <div className="m-3 mb-2 font-semibold">University of Texas at Austin</div>
+              <li className="mx-3 mb-1"><span>Business Foundations Certificate</span></li>
               <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">Stack</div>
               <div className="m-3 flex flex-col justify-left items-start" >
                 <div className="flex flex-row gap-4 stack-image-holder">

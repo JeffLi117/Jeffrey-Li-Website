@@ -12,6 +12,24 @@ html {
     background-attachment: fixed;
 }
 
+body {
+    animation: fadeInAnimation ease 1.25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-test {
+    transition: opacity 1.25s ease;
+}
+
 .stack-image-holder {
     width: 35px;
     height: 35px;
@@ -41,6 +59,11 @@ li span {
     color: azure;
 }
 
+li.portfolio-header {
+    list-style: none;
+    margin-left: 1rem;
+}
+
 li.portfolio-header a {
     transition: color 0.26s ease-in;
 }
@@ -60,6 +83,26 @@ a:active {
 .contact-hover:hover {
     animation: shake 0.5s;
     animation-iteration-count: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+  background: azure; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 @keyframes shake {

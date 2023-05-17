@@ -1,8 +1,15 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
 
 function portfolioPage() {
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    setFade(false);
+  }, [])
   return (
-    <div className="bg-gray-500/75 p-3 md:p-4 ">
+    <div className="bg-gray-500/75 p-3 rounded-xl md:p-4 lg:w-3/4 fade-test" style={{ opacity:`${fade ? "0" : "1"}` }}>
         <div className="flex relative justify-left items-center ">
           <div className="text-5xl lineafter">Portfolio</div>&nbsp;
         </div>
