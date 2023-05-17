@@ -15,7 +15,7 @@ function contactPage() {
               <div className="text-5xl lineafter">Contact</div>&nbsp;
           </div>
           <div className="flex flex-col justify-center items-center">
-            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-3/4 md:w-2/4">
+            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full md:w-2/4">
                 <div className="text-xl">Email me</div>
                 <div className="flex flex-row justify-left items-center gap-4">
                     <div className="flex flex-row gap-4 stack-image-holder contact-hover">
@@ -24,7 +24,7 @@ function contactPage() {
                     <div className="w-full">li.jeffreyt@yahoo.com</div>
                 </div>
             </div>
-            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-3/4 md:w-2/4">
+            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full md:w-2/4">
                 <div className="text-xl">Call me</div>
                 <div className="flex flex-row justify-left items-center gap-4">
                     <div className="flex flex-row gap-4 m-auto stack-image-holder contact-hover">
@@ -33,7 +33,7 @@ function contactPage() {
                     <div className="w-full">(972)&nbsp;697-6657</div>
                 </div>
             </div>
-            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-3/4 md:w-2/4">
+            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full md:w-2/4">
                 <div className="text-xl">LinkedIn Profile</div>
                 <div className="flex flex-row justify-left items-center gap-4">
                     <div className="flex flex-row gap-4 stack-image-holder contact-hover">
@@ -41,7 +41,7 @@ function contactPage() {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-3/4 md:w-2/4">
+            <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full md:w-2/4">
                 <div className="text-xl">Location</div>
                 <div className="flex flex-row justify-left items-center gap-4">
                     <div className="flex flex-row gap-4 m-auto stack-image-holder">

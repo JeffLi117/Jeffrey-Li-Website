@@ -80,6 +80,14 @@ a:active {
     color:purple;
 }
 
+span.test-hover {
+    transition: all .15s ease-in;
+}
+
+span.test-hover:hover {
+    opacity: 1;
+}
+
 .contact-hover:hover {
     animation: shake 0.5s;
     animation-iteration-count: 1;
