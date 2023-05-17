@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Nav() {
   return (
-    <div className="absolute top-2 flex justify-left items-center gap-4" >
+    <div className="absolute top-2 flex justify-left items-center gap-2 md:gap-4" >
         <Link href='/' >
             <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100">Home</div>
         </Link>

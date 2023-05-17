@@ -10,7 +10,7 @@ function contactPage() {
       setFade(false);
     }, [])
     return (
-      <div className="bg-gray-500/75 p-3 rounded-xl rounded-xl md:p-4 md:text-2xl lg:w-3/4 fade-test" style={{ opacity:`${fade ? "0" : "1"}` }}>
+      <div className="bg-gray-500/75 p-3 rounded-xl md:p-4 md:text-2xl lg:w-3/4 fade-test" style={{ opacity:`${fade ? "0" : "1"}` }}>
           <div className="flex relative justify-left items-center ">
               <div className="text-5xl lineafter">Contact</div>&nbsp;
           </div>

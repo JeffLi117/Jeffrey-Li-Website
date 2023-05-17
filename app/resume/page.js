@@ -59,19 +59,19 @@ as a Certified Professional in Patient Safety</span></li>
               <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">Stack</div>
               <div className="m-3 flex flex-col justify-left items-start" >
                 <div className="flex flex-row gap-4 stack-image-holder">
-                  <Image src="/js.png" alt="javascript icon" width="0" height="0" sizes="100vw" className="w-full h-auto" />
+                  <Image src="/js.png" alt="javascript icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
                   <div className="text-xl">JavaScript</div>
                 </div>
                 <div className="flex flex-row gap-4 stack-image-holder">
-                  <Image src="/react.png" alt="react icon" width="0" height="0" sizes="100vw" className="w-full h-auto m-auto" />
+                  <Image src="/react.png" alt="react icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
                   <div className="text-xl">React</div>
                 </div>
                 <div className="flex flex-row gap-4 stack-image-holder">
-                  <Image src="/firebase.png" alt="firebase icon" width="0" height="0" sizes="100vw" className="w-full h-auto" />
+                  <Image src="/firebase.png" alt="firebase icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
                   <div className="text-xl">Firebase</div>
                 </div>
                 <div className="flex flex-row gap-4 stack-image-holder">
-                  <Image src="/sveltekit.png" alt="sveltekit icon" width="0" height="0" sizes="100vw" className="h-full w-auto m-auto" />
+                  <Image src="/sveltekit.png" alt="sveltekit icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
                   <div className="text-xl">SvelteKit</div>
                 </div>
               </div>
