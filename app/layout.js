@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="flex justify-center p-3 pt-12 md:p-10">
+      <body className="flex justify-center p-3 pt-12 md:p-12 md:pt-14">
         <Nav />
         <div className="lg:flex lg:justify-center w-full">
           {children}

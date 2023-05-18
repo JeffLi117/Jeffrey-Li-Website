@@ -22,7 +22,7 @@ function aboutPage() {
                     <Image src="/headshot.jpg" alt="professional headshot of Jeffrey Li" priority={true} width="0" height="0" sizes="100vw" style={{ width: '64px', height: 'auto' }} className="rounded-xl absolute top-0 right-0 myhead"/>
                 </div>
                 <div>
-                    <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">
+                    <div className="bulleted-header text-2xl mb-4 font-bold w-4/5 md:text-3xl">
                         Full-Stack Software Developer
                     </div>
                     <div className="text-1xl flex about-contact flex-col relative md:text-2xl ">

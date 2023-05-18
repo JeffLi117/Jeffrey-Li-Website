@@ -41,6 +41,10 @@ body {
     padding: 2px;
 }
 
+.welcome-text {
+    position: relative;
+}
+
 .bulleted-header {
     color:aquamarine; 
 }
@@ -136,5 +140,8 @@ span.test-hover:hover {
         position: static;
         min-width: 90%;
         display: block;
+    }
+    .welcome-text {
+        left: -50%;
     }
 }
