@@ -19,7 +19,7 @@ function aboutPage() {
         <div className="pt-4">
             <div className="flex flex-col relative md:grid " style={{ gridTemplateColumns: '28% 72%'}}>
                 <div className="imageHolder">
-                    <Image src="/headshot.jpg" alt="professional headshot of Jeffrey Li" priority={true} width="0" height="0" sizes="100vw" style={{ width: '64px', height: 'auto' }} className="rounded-full absolute top-0 right-0 myhead"/>
+                    <Image src="/headshot.jpg" alt="professional headshot of Jeffrey Li" priority={true} width="0" height="0" sizes="100vw" style={{ width: '64px', height: 'auto' }} className="rounded-xl absolute top-0 right-0 myhead"/>
                 </div>
                 <div>
                     <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">

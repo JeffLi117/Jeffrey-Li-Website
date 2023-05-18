@@ -36,19 +36,19 @@ function Nav() {
   return (
     <div className="absolute top-2 flex justify-center items-center gap-2 md:gap-4 md:justify-left navbar-main" >
         <Link href='/' onClick={() => {handlerClick("home")}}>
-            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.home ? "aqua" : "aquamarine"}`, opacity: `${clicked.home ? "1" : "0.75"}`, textDecoration: `${clicked.home ? "underline" : "none"}`}}>Home</div>
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.home ? "orange" : "aquamarine"}`, opacity: `${clicked.home ? "1" : "0.75"}`, textDecoration: `${clicked.home ? "underline" : "none"}`}}>Home</div>
         </Link>
         <Link href='/about' onClick={() => {handlerClick("about")}}>
-            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.about ? "aqua" : "aquamarine"}`, opacity: `${clicked.about ? "1" : "0.75"}`, textDecoration: `${clicked.about ? "underline" : "none"}`}}>About</div>
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.about ? "orange" : "aquamarine"}`, opacity: `${clicked.about ? "1" : "0.75"}`, textDecoration: `${clicked.about ? "underline" : "none"}`}}>About</div>
         </Link>
         <Link href='/resume' onClick={() => {handlerClick("resume")}}>
-            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.resume ? "aqua" : "aquamarine"}`, opacity: `${clicked.resume ? "1" : "0.75"}`, textDecoration: `${clicked.resume ? "underline" : "none"}`}}>Resume</div>
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.resume ? "orange" : "aquamarine"}`, opacity: `${clicked.resume ? "1" : "0.75"}`, textDecoration: `${clicked.resume ? "underline" : "none"}`}}>Resume</div>
         </Link>
         <Link href='/portfolio' onClick={() => {handlerClick("portfolio")}}>
-            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.portfolio ? "aqua" : "aquamarine"}`, opacity: `${clicked.portfolio ? "1" : "0.75"}`, textDecoration: `${clicked.portfolio ? "underline" : "none"}`}}>Portfolio</div>
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.portfolio ? "orange" : "aquamarine"}`, opacity: `${clicked.portfolio ? "1" : "0.75"}`, textDecoration: `${clicked.portfolio ? "underline" : "none"}`}}>Portfolio</div>
         </Link>
         <Link href='/contact' onClick={() => {handlerClick("contact")}}>
-            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.contact ? "aqua" : "aquamarine"}`, opacity: `${clicked.contact ? "1" : "0.75"}`, textDecoration: `${clicked.contact ? "underline" : "none"}`}}>Contact</div>
+            <div className="opacity-75 transition-all ease-in duration-150 hover:opacity-100" style={{ color: `${clicked.contact ? "orange" : "aquamarine"}`, opacity: `${clicked.contact ? "1" : "0.75"}`, textDecoration: `${clicked.contact ? "underline" : "none"}`}}>Contact</div>
         </Link>
     </div>
   )

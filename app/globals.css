@@ -41,17 +41,7 @@ body {
     padding: 2px;
 }
 
-.lineafter::after {
-    position: absolute;
-    top: 60%;
-    display: inline-block;
-    content: "";
-    border-top: 2px solid azure;
-    width: 2.5rem;
-    margin: 0 1rem;
-}
-
-li.bulleted-header {
+.bulleted-header {
     color:aquamarine; 
 }
 
@@ -135,6 +125,10 @@ span.test-hover:hover {
 }
 
 @media (min-width: 768px) {
+    li span {
+        margin-left: -7px;
+        color: azure;
+    }
     .imageHolder {
         margin: auto 0;
     }
@@ -142,14 +136,5 @@ span.test-hover:hover {
         position: static;
         min-width: 90%;
         display: block;
-    }
-    .lineafter::after {
-        position: absolute;
-        top: 60%;
-        display: inline-block;
-        content: "";
-        border-top: 2px solid azure;
-        width: 4rem;
-        margin: 0 1rem;
     }
 }
