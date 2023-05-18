@@ -71,12 +71,20 @@ a:link, a:visited {
     color: aquamarine;
 }
 
-a:hover {
-    color:aqua;
-}
-
 a:active {
     color:purple;
+}
+
+a.div-inside div {
+    transition: all 0.35s ease-in;
+}
+
+a.div-inside span.span-inside {
+    color: aquamarine;
+}
+
+a.div-inside:hover div {
+    opacity: 1;
 }
 
 span.test-hover {
