@@ -1,14 +1,16 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 
 export default function TypingEffect() {
-
-  const titles = ["SOFTWARE DEVELOPER", "FULL STACK DEVELOPER", "DOCTOR TO DEV"];
-  let text = titles[0];
+  const titles = ["SOFTWARE ENGINEER", "FULL STACK DEVELOPER", "DOCTOR TO DEV"];
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [givenIndex, setGivenIndex] = useState(0);
+  let text;
 
   useEffect(() => {
+    text = titles[givenIndex];
     let currentIndex = 0;
     let intervalId;
 
@@ -36,8 +38,10 @@ export default function TypingEffect() {
           setIsTyping(true);
           setTimeout(() => {
             currentIndex = 0;
-            intervalId = setInterval(typeText, 50); // Start typing again (adjust as needed)
-          }, 1000); // Delay before typing again (1 second)
+            intervalId = setInterval(() => {
+              setGivenIndex((prevIndex) => (prevIndex + 1) % titles.length);
+            }, 50); // Switch titles every 50ms
+          }, 2000); // Delay before typing again (2 seconds)
           return prevText;
         } else {
           return prevText.slice(0, prevText.length - 1);
@@ -50,7 +54,7 @@ export default function TypingEffect() {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [givenIndex]);
 
-  return <h3 className="text-2xl font-light flex justify-left items-center" >{displayText}</h3>;
+  return <h3 className="text-2xl font-light flex justify-left items-center">{displayText}</h3>;
 }
