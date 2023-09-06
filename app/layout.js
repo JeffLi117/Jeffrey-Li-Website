@@ -1,5 +1,26 @@
 import './globals.css';
-import Nav from '@/components/Nav';
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+import { Inter, Roboto_Mono, Raleway } from 'next/font/google';
+ 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+ 
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
+})
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-raleway',
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Jeffrey's Personal Portfolio Website",
@@ -8,16 +29,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${roboto_mono.variable} ${raleway.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="google" content="notranslate" />
-        <meta http-equiv="Content-Language" content="en" />
+        <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body className="flex justify-center p-3 pt-12 md:p-12 md:pt-14">
-        <Nav />
-        <div className="lg:flex lg:justify-center w-full">
+      <body>
+        <div>
           {children}
         </div>
       </body>

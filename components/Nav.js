@@ -1,14 +1,18 @@
-"use client";
- 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Pathname from "@/app/pathname";
+import { FaGithub } from "react-icons/fa";
+
 
 function Nav() {
 
   return (
-    <div >
-        
+    <div className="bg-orange-200 relative" >
+      < FaGithub 
+        style={{
+          position: 'fixed',
+          top: '10px',
+          right: '10px',
+          color: 'black',
+        }}
+      />
     </div>
   )
 }
