@@ -19,17 +19,16 @@ function resumePage() {
             <div className="md:col-start-1">
               <div className="text-2xl mb-4 font-bold w-4/5 md:text-3xl">Professional Experience</div>
               <div className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Front-End Developer</span></div>
-              <div className="m-2 font-semibold">Chingu (Apr 2023 - Present)</div>
-              <li className="mx-3 mb-1"><span>Regularly pair program with team members to improve team productivity and coding skills</span></li>
-              <li className="mx-3 mb-1"><span>Participated in Agile sprint meetings resulting in successful project delivery</span></li>
-              <li className="mx-3 mb-1"><span>Contributed to organizing file structure for application and built out higher-level JavaScript/React components
-improving code readability and maintainability</span></li>
+              <div className="m-2 font-semibold">OptiChroniX (June 2023 - Present)</div>
+              <li className="mx-3 mb-1"><span>Collaborated in an Agile environment to launch innovative features for the myAVOS mobile app, enhancing the UI/UX for over 200 users</span></li>
+              <li className="mx-3 mb-1"><span>Significantly improved front-end components that played a pivotal role in securing a successful position in initiating pilot testing via Kickstart’s Health & Wellbeing Vertical</span></li>
+              <li className="mx-3 mb-1"><span>Utilized advanced front-end technologies and frameworks to optimize performance and user experience</span></li>
               
-              <div className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Freelance Front-End Developer</span></div>
-              <div className="m-2 font-semibold">Self-Employed (March 2023 - Present)</div>
-              <li className="mx-3 mb-1"><span>Used entrepreneurial expertise, technical skills, and creative talents to develop, market, and maintain websites</span></li>
-              <li className="mx-3 mb-1"><span>Worked independently across several projects to meet deadlines</span></li>
-              <li className="mx-3 mb-1"><span>Skilled in React, JavaScript, APIs, and CSS to create responsive and data-intensive web designs</span></li>
+              <div className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Full-Stack Developer</span></div>
+              <div className="m-2 font-semibold">Memora (Jan 2023 - Present)</div>
+              <li className="mx-3 mb-1"><span>Spearheaded the development of Memora, a full-stack note-taking app that focuses on enhancing user productivity through built-in reminders</span></li>
+              <li className="mx-3 mb-1"><span>Leveraged Firebase for data storage and user authentication for data integrity and security</span></li>
+              <li className="mx-3 mb-1"><span>Strategically planning the transition into a native app to provide additional functionality</span></li>
 
               <div className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Resident Physician</span></div>
               <div className="m-2 font-semibold">HCA Healthcare (June 2022 - Oct 2022)</div>
@@ -73,6 +72,14 @@ as a Certified Professional in Patient Safety</span></li>
                 <div className="flex flex-row gap-4 stack-image-holder">
                   <Image src="/sveltekit.png" alt="sveltekit icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
                   <div className="text-xl">SvelteKit</div>
+                </div>
+                <div className="flex flex-row gap-4 stack-image-holder">
+                  <Image src="/next-js.svg" alt="sveltekit icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
+                  <div className="text-xl">Next.js</div>
+                </div>
+                <div className="flex flex-row gap-4 stack-image-holder">
+                  <Image src="/mongodb-original-wordmark.svg" alt="sveltekit icon" width="0" height="0" sizes="100vw" className="hidden h-full w-auto m-auto md:block" />
+                  <div className="text-xl">MongoDB</div>
                 </div>
               </div>
             </div>

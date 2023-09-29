@@ -30,7 +30,7 @@ function aboutPage() {
                             <div>&#8250; &nbsp;<span className="font-bold">Phone:</span>&nbsp;(972) 697-6657</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
-                            <div>&#8250; &nbsp;<span className="font-bold">Email:</span>&nbsp;li.jeffreyt@yahoo.com</div>
+                            <div>&#8250; &nbsp;<span className="font-bold">Email:</span>&nbsp;jeffrey.t.li.work@gmail.com</div>
                         </div>
                         <div className="flex flex-col justify-center align-left md:flex-row,justify-left">
                             <div>&#8250; &nbsp;<span className="font-bold">Location:</span>&nbsp;Houston,&nbsp;TX</div>

@@ -19,9 +19,9 @@ function contactPage() {
                 <div className="text-xl">Email me</div>
                 <div className="flex flex-row justify-left items-center gap-4">
                     <div className="flex flex-row gap-4 stack-image-holder contact-hover">
-                        <a href="mailto:li.jeffreyt@yahoo.com" className="m-auto"><Image src="/mail.svg" alt="mail icon" width="0" height="0" sizes="100vw" className="w-full h-auto m-auto" /></a>
+                        <a href="mailto:jeffrey.t.li.work@gmail.com" className="m-auto"><Image src="/mail.svg" alt="mail icon" width="0" height="0" sizes="100vw" className="w-full h-auto m-auto" /></a>
                     </div>
-                    <div className="w-full">li.jeffreyt@yahoo.com</div>
+                    <div className="w-full">jeffrey.t.li.work@gmail.com</div>
                 </div>
             </div>
             <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full md:w-2/4 each-contact">
