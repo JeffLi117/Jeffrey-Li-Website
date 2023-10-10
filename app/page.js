@@ -1,9 +1,9 @@
-"use client";
-import { useState, useEffect } from "react";
 import Nav from "@/components/Nav";
 import Image from "next/image";
 import TypingEffect from "@/components/TypingEffect";
 import Headshot_Mononoke from "../public/Headshot_Mononoke.jpg";
+import { FaLaptopCode } from "react-icons/fa";
+import AboutMe from "@/components/AboutMe";
 
 export default function Home() {
   
@@ -20,15 +20,21 @@ export default function Home() {
             alt="Personal headshot"
           />
         </div>
-        <div className="grid grid-rows-4 col-start-2 col-end-5 p-4">
-          <div className="flex flex-col items-center justify-center row-start-2 row-end-3">
+        <div className="grid grid-rows-5 col-start-2 col-end-5 p-4">
+          <div className="flex items-center justify-center row-start-2 row-end-3">
+              < FaLaptopCode size={55}/>
+          </div>
+          <div className="flex flex-col items-center justify-center row-start-3 row-end-4">
             <div className="text-2xl font-bold">Jeffrey Li</div>
             <div>Houston, TX</div>
           </div>
-          <div className="flex flex-col items-center justify-center p-2  row-start-3 row-end-4">
+          <div className="flex flex-col items-center justify-center p-2 row-start-4 row-end-5">
             <TypingEffect />
           </div>
         </div>
+      </div>
+      <div className="h-1/2 bg-beige-200">
+        <AboutMe />
       </div>
     </div>
   )

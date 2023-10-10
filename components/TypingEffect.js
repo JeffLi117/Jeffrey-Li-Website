@@ -56,5 +56,7 @@ export default function TypingEffect() {
     };
   }, [givenIndex]);
 
-  return <h3 className="text-2xl font-light flex justify-left items-center">{displayText}</h3>;
+  return <h3 className="font-mono text-2xl font-light flex justify-left items-center">
+    {displayText}
+  </h3>;
 }
