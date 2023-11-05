@@ -8,9 +8,9 @@ import AboutMe from "@/components/AboutMe";
 export default function Home() {
   
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen text-white">
       <Nav />
-      <div className="h-1/2 bg-orange-200 grid grid-cols-4">
+      <div className="h-1/2 bg-cyan-900 grid grid-cols-4">
         <div className="col-start-1 col-end-2 flex justify-end items-center">
           <Image
             src={Headshot_Mononoke}

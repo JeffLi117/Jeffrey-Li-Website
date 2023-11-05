@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function TypingEffect() {
-  const titles = ["SOFTWARE ENGINEER", "FULL STACK DEVELOPER", "DOCTOR TO DEV"];
+  const titles = ["SOFTWARE ENGINEER", "FULL STACK DEVELOPER", "PIZZA LOVER", "DOCTOR TO DEV"];
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [givenIndex, setGivenIndex] = useState(0);
