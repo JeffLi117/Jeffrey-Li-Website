@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Mono&display=swap');
-
 div#iconHolders {
     position: fixed;
     top: 10px;
     right: 10px;
 }
 
-div#githubIcon, div#linkedInIcon {
+div#burgerHolder {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+div#githubIcon, div#linkedInIcon, div#mailIcon {
     background-color: transparent;
     transition: transform 0.6s ease, background-color 0.6s ease; /* Apply a transition for the transform property */
 }
 
-div#githubIcon:hover, div#linkedInIcon:hover {
+div#githubIcon:hover, div#linkedInIcon:hover, div#mailIcon:hover {
     background-color: rgb(251 191 36);
     transform: rotate(360deg); /* Rotate the icon 360 degrees on hover */
 }
