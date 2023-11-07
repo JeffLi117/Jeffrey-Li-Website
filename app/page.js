@@ -5,7 +5,7 @@ import Headshot_Mononoke_Square from "../public/Headshot_Mononoke_Square.jpg";
 export default function Home() {
   
   return (
-    <div className="p-2 h-full md:grid md:grid-cols-4">
+    <div className="animate-fadeIn p-2 h-full md:grid md:grid-cols-4">
       <div className="p-4 h-full grid grid-rows-[16%,16%,16%,16%,16%,16%] md:col-start-2 md:col-end-5">
         <div className="flex items-center justify-center row-start-2 row-end-3">
           <Image

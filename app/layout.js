@@ -1,10 +1,10 @@
+"use client";
+import { useState } from 'react';
 import './globals.css';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Nav from '@/components/Nav';
-import { Oswald } from 'next/font/google'
- 
-const osw = Oswald({ subsets: ['latin'], weight: '400', })
+import LightToggle from '@/components/LightToggle';
 config.autoAddCss = false;
 
 export const metadata = {
@@ -13,6 +13,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const [isLight, setIsLight] = useState(false);
+
+  const outerLightHandler = (someBool) => {
+    setIsLight(someBool)
+  }
+
   return (
     <html lang="en">
       <head>
@@ -21,10 +27,11 @@ export default function RootLayout({ children }) {
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body>
+      <body className="bg-cyan-900">
         <div className={`relative bg-cyan-900 h-screen w-full text-white font-sans`}>
           <Nav />
           {children}
+          <LightToggle outerLightHandler={outerLightHandler} isLight={isLight}/>
         </div>
       </body>
     </html>

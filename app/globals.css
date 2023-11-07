@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-div#iconHolders {
+/* div#iconHolders {
     position: fixed;
     top: 10px;
-    right: 10px;
+    left: 10px;
 }
 
 div#burgerHolder {
     position: fixed;
     top: 10px;
-    left: 10px;
+    right: 10px;
+} */
+
+div#light-toggle {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
 
 div#githubIcon, div#linkedInIcon, div#mailIcon {
