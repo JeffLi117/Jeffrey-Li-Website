@@ -17,10 +17,10 @@ function Nav() {
           onClick={()=> setOpenBurger(!openBurger)}
         />
         {openBurger && 
-          <div className="font-mono text-sm">
-            <Link href="/"><div>HOME</div></Link>
-            <Link href="/about"><div>ABOUT</div></Link>
-            <Link href="/projects"><div>PROJECTS</div></Link>
+          <div className="text-sm">
+            <Link onClick={()=> setOpenBurger(false)} href="/"><div>HOME</div></Link>
+            <Link onClick={()=> setOpenBurger(false)}  href="/about"><div>ABOUT</div></Link>
+            <Link onClick={()=> setOpenBurger(false)}  href="/projects"><div>PROJECTS</div></Link>
           </div>
         }
       </div>

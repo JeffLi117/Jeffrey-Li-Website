@@ -1,6 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { Roboto_Mono } from "next/font/google";
+ 
+const rm = Roboto_Mono({ subsets: ['latin'], weight: '400', })
 
 export default function TypingEffect() {
   const titles = ["SOFTWARE ENGINEER", "FULL STACK DEVELOPER", "PIZZA LOVER", "DOCTOR TO DEV"];
@@ -56,7 +59,7 @@ export default function TypingEffect() {
     };
   }, [givenIndex]);
 
-  return <h3 className="font-mono text-2xl font-light flex justify-left items-center">
+  return <h3 className={`text-2xl font-light flex justify-left items-center text-slate-400 ${rm.className}`}>
     {displayText}
   </h3>;
 }
