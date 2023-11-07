@@ -13,7 +13,7 @@ function Nav() {
   const [openBurger, setOpenBurger] = useState(false);
   let pathName = window.location.pathname;
   return (
-    <div className="bg-transparent relative z-20 animate-fadeIn flex justify-between items-center p-1">
+    <div className="bg-transparent text-xl relative z-20 animate-fadeIn flex justify-between items-center p-1">
       <div id="iconHolders" className="flex justify-center items-center md:gap-1">
         <Link href="/"><div className={`z-20 p-1 md:p-2 border border-transparent rounded-full ${frl.className}`}>JL</div></Link>
         <div id="githubIcon" className="z-20 p-1 md:p-2 border border-transparent rounded-full">

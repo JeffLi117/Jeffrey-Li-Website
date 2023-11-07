@@ -1,8 +1,4 @@
-"use client";
-
-import Image from "next/image";
-import { useState, useEffect } from "react";
-
+// "use client";
 function aboutPage() {
     return (
         <div className="flex flex-col justify-start items-start gap-4 pt-2 px-2 animate-fadeIn">

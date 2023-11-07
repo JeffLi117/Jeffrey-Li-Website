@@ -4,7 +4,7 @@ import './globals.css';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Nav from '@/components/Nav';
-import LightToggle from '@/components/LightToggle';
+import { BsSun, BsMoon } from "react-icons/bs";
 config.autoAddCss = false;
 
 export const metadata = {
@@ -15,8 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const [isLight, setIsLight] = useState(false);
 
-  const outerLightHandler = (someBool) => {
-    setIsLight(someBool)
+  const outerLightHandler = () => {
+    setIsLight(!isLight)
   }
 
   return (
@@ -27,11 +27,21 @@ export default function RootLayout({ children }) {
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body className="bg-cyan-900">
-        <div className={`relative bg-cyan-900 h-screen w-full text-white font-sans`}>
+      <body className={`relative ${isLight ? "bg-white text-cyan-900" : "bg-cyan-900 text-white"}  font-sans`}>
+        <div className="h-screen w-full">
           <Nav />
           {children}
-          <LightToggle outerLightHandler={outerLightHandler} isLight={isLight}/>
+          <div id="light-toggle" className={`${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"}  p-2 rounded-full `} onClick={() => outerLightHandler()}>
+            {isLight ? 
+              <BsMoon 
+                  className="rounded-full"
+              /> 
+              : 
+              <BsSun 
+                  className="rounded-full"
+              />
+            }
+          </div>
         </div>
       </body>
     </html>
