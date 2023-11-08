@@ -59,7 +59,7 @@ export default function TypingEffect() {
     };
   }, [givenIndex]);
 
-  return <h3 className={`text-2xl font-light flex justify-left items-center text-slate-400 ${rm.className}`}>
+  return <h3 className={`md:min-h-[80px] text-2xl font-light flex justify-left items-center text-slate-400 ${rm.className}`}>
     {displayText}
   </h3>;
 }
