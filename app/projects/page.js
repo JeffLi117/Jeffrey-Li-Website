@@ -6,15 +6,9 @@ import Not_In_Vein_SS from "../../public/Not_In_Vein_SS.png";
 
 const ProjectInfo = [
     {
-        title: "Finding Friends",
-        description: `A "Where's Waldo" game that gives you the opportunity to get on the leaderboard!`,
-        link: "https://jeffli117.github.io/Finding-Friends/",
-        ImgSrc: Finding_Friends_SS,
-    },
-    {
         title: "Memora",
         description: "Note-taking app designed for those who need help remembering important information by using built-in reminders.",
-        link: "https://github.com/JeffLi117/Memora",
+        link: "https://memora-jeffli117.vercel.app/",
         ImgSrc: Memora_SS,
     },
     {
@@ -22,6 +16,12 @@ const ProjectInfo = [
         description: "Centralized reminder application for blood donation donors to track their past donations and remind them of upcoming ones via notifications, email, and text.",
         link: "https://github.com/JeffLi117/Not-In-Vein",
         ImgSrc: Not_In_Vein_SS,
+    },
+    {
+        title: "Finding Friends",
+        description: `A "Where's Waldo" game that gives you the opportunity to get on the leaderboard!`,
+        link: "https://jeffli117.github.io/Finding-Friends/",
+        ImgSrc: Finding_Friends_SS,
     },
 ]
 
