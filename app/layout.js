@@ -29,22 +29,18 @@ export default function RootLayout({ children }) {
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body className={`min-h-screen relative font-sans md:px-24 md:bg-[url('../public/white-pattern.jpg')] lg:px-36`}>
+      <body className={`min-h-screen relative font-sans md:px-24 ${isLight ? "md:bg-[url('../public/white-pattern.jpg')]" : "md:bg-[url('../public/dark-pattern.jpg')]"}  lg:px-36`}>
         <LightContext.Provider
             value={{ isLight, outerLightHandler }}
           >
           <div className={`min-h-screen w-full ${isLight ? "bg-white text-cyan-900" : "bg-cyan-900 text-white"}`}>
             <Nav />
             {children}
-            <div id="light-toggle" className={`${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"}  p-2 rounded-full `} onClick={() => outerLightHandler()}>
+            <div id="light-toggle" className={`${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} p-2 rounded-full `} onClick={() => outerLightHandler()}>
               {isLight ? 
-                <BsMoon 
-                    className="rounded-full"
-                /> 
+                <BsMoon className="rounded-full"/> 
                 : 
-                <BsSun 
-                    className="rounded-full"
-                />
+                <BsSun className="rounded-full"/>
               }
             </div>
           </div>

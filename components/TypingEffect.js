@@ -13,7 +13,7 @@ export default function FadingEffect() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 2500); // Switch titles every 3 seconds
+    }, 2500); 
 
     return () => {
       clearInterval(intervalId);
@@ -26,7 +26,6 @@ export default function FadingEffect() {
         <span
           key={index}
           className={`inline-block whitespace-nowrap transition-opacity duration-1000 ${currentTitleIndex === index ? "opacity-100" : "opacity-0"}`}
-          style={{ top: 0, left: 0 }}
         >
           {title}
         </span>
