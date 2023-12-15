@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lev8DEpAAAAAMT9asmfhtnL1PpcsLlTf2UjNQzh"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <meta name="google" content="notranslate" />

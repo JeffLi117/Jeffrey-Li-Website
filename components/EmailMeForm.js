@@ -8,7 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import 'dotenv/config';
 
 function EmailMeForm() {
-  const recaptcha = useRef();
+  const reCaptchaRef = useRef();
   const { isLight } = useContext(LightContext);
   const [submitForm, setSubmitForm] = useState({});
   const [isFormValid, setIsFormValid] = useState(false); 
@@ -66,13 +66,8 @@ function EmailMeForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const captchaValue = recaptcha.current.getValue();
     // console.log("captchaValue is ", captchaValue);
     // console.log("typeof captchaValue is ", typeof captchaValue);
-
-    if (!captchaValue) {
-      alert("Please verify that you're a human with the ReCAPTCHA.");
-    }
 
     // == Check honeypots ==
     if (formData.get("_honey") !== "" || formData.get("honey_2") !== "") {
@@ -80,13 +75,14 @@ function EmailMeForm() {
     }
 
     try {
-      const res = await verifyReCAPTCHA(captchaValue);
-      console.log("res from await verifyReCAPTCHA ", res);
+      const token = await reCaptchaRef.current.executeAsync();    
+      const res = await verifyReCAPTCHA(token);
+      console.log("res from verifyReCAPTCHA ", res);
       if (res?.success) {
-        setIsReCAPTCHAVerified(true)
+        setIsReCAPTCHAVerified(true);
+        reCaptchaRef.current.reset();
       } else {
-        errors.
-        setErrors
+        setSentResult(false)
       }
     } catch (err) {
       console.log(err);
@@ -144,17 +140,21 @@ function EmailMeForm() {
             <input type="text" name="_honey" className="hidden" aria-hidden="true" />
             <input type="text" name="honey_2" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>
             <input type="checkbox" name="botcheck" className="hidden"/>
-            <input type="text" name="name" placeholder="Your name" className="border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg text-white" required/>
-            <input type="email" name="email" placeholder="Your email" className="border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg text-white" required/>
-            <textarea name="message" placeholder="Your message ..." className="border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg text-white" required></textarea>
+            <input type="text" name="name" placeholder="Your name" className={`border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
+            <input type="email" name="email" placeholder="Your email" className={`border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
+            <textarea name="message" placeholder="Your message ..." className={`border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required></textarea>
             {(errors.name) && <p className="text-red">{errors.name}</p>} 
             {(errors.email) && <p className="text-red">{errors.email}</p>} 
             {(errors.message) && <p className="text-red">{errors.message}</p>} 
-
-            <ReCAPTCHA ref={recaptcha} sitekey={process.env.NEXT_PUBLIC_SITE_KEY} />
+            
             {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-full border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}>Send</button>}
             {sentResult === true && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><FaRegCheckCircle /> Sent!</button>}
             {sentResult === false && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><MdErrorOutline /> Oops! Something went wrong.</button>}
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+              size="invisible"
+              ref={reCaptchaRef}
+            />
         </form>
     </div>
     

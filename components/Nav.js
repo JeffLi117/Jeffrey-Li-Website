@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { LightContext } from "@/app/layout";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdMoreVert, MdMoreHoriz } from "react-icons/md";
@@ -9,7 +10,7 @@ import { Frank_Ruhl_Libre } from 'next/font/google'
 const frl = Frank_Ruhl_Libre({ subsets: ['latin'], weight: '400', })
 
 function Nav() {
-
+  const { isLight } = useContext(LightContext);
   const [openBurger, setOpenBurger] = useState(false);
   const [pathName, setPathName] = useState(null)
   
@@ -21,17 +22,17 @@ function Nav() {
     <div className="bg-transparent text-xl relative z-20 animate-fadeIn flex justify-between items-center p-1 h-[40px] md:h-[55px]">
       <div id="iconHolders" className="flex justify-center items-center gap-1">
         <Link href="/"><div className={`z-20 p-1 md:p-2 border border-transparent rounded-full ${frl.className}`}>JL</div></Link>
-        <div id="githubIcon" className="z-20 p-1 md:p-2 border border-transparent rounded-full">
+      <div id="githubIcon" className={`z-20 p-1 md:p-2 border border-transparent rounded-full transition bg-transparent hover:bg-yellow-300 ${isLight ? null : "hover:text-cyan-900"} ease-in-out`}>
           <a href="https://github.com/JeffLi117">
             < FaGithub/>
           </a>
           </div>
-          <div id="linkedInIcon" className="z-20 p-1 md:p-2 border border-transparent rounded-full">
+          <div id="linkedInIcon" className={`z-20 p-1 md:p-2 border border-transparent rounded-full transition bg-transparent hover:bg-yellow-300 ${isLight ? null : "hover:text-cyan-900"} ease-in-out`}>
             <a href="https://www.linkedin.com/in/jeffrey-li-do/">
               < FaLinkedinIn/>
             </a>
           </div>
-          <div id="mailIcon" className="z-20 p-1 md:p-2 border border-transparent rounded-full">
+          <div id="mailIcon" className={`z-20 p-1 md:p-2 border border-transparent rounded-full transition bg-transparent hover:bg-yellow-300 ${isLight ? null : "hover:text-cyan-900"} ease-in-out`}>
             <a href="mailto:jeffrey.t.li.work@gmail.com">
               < HiOutlineMail/>
             </a>
@@ -81,21 +82,21 @@ function Nav() {
             className={`${pathName === "/" ? "pointer-events-none" : ""} p-1 p-2 border border-transparent rounded-full`} 
             aria-disabled={`${pathName === "/" ? "true" : ""}`} 
           >
-            <div className={`${pathName === "/" ? "text-slate-400" : ""}`}>HOME</div>
+            <div className={`transition bg-transparent hover:bg-yellow-300 ease-in-out rounded-md px-2 py-1 ${pathName === "/" ? "text-slate-400" : ""} ${isLight ? null : "hover:text-cyan-900"}`}>HOME</div>
           </Link>
           <Link 
             onClick={()=> setPathName("/about")} href="/about"
             className={`${pathName === "/about" ? "pointer-events-none" : ""} p-1 p-2 border border-transparent rounded-full`} 
             aria-disabled={`${pathName === "/about" ? "true" : ""}`} 
           >
-            <div className={`${pathName === "/about" ? "text-slate-400" : ""}`}>ABOUT</div>
+            <div className={`transition bg-transparent hover:bg-yellow-300 ease-in-out rounded-md px-2 py-1 ${pathName === "/about" ? "text-slate-400" : ""} ${isLight ? null : "hover:text-cyan-900"}`}>ABOUT</div>
           </Link>
           <Link 
             onClick={()=> setPathName("/projects")} href="/projects"
             className={`${pathName === "/projects" ? "pointer-events-none" : ""} p-1 p-2 border border-transparent rounded-full`} 
             aria-disabled={`${pathName === "/projects" ? "true" : ""}`} 
           >
-            <div className={`${pathName === "/projects" ? "text-slate-400" : ""}`}>PROJECTS</div>
+            <div className={`transition bg-transparent hover:bg-yellow-300 ease-in-out rounded-md px-2 py-1 ${pathName === "/projects" ? "text-slate-400" : ""} ${isLight ? null : "hover:text-cyan-900"}`}>PROJECTS</div>
           </Link>
         </div>
     </div>

@@ -17,15 +17,24 @@ div#burgerHolder {
 div#light-toggle {
     position: fixed;
     bottom: 10px;
-    right: 10px;
+    left: 10px;
 }
 
-div#githubIcon, div#linkedInIcon, div#mailIcon {
+/* div#githubIcon, div#linkedInIcon, div#mailIcon {
     background-color: transparent;
-    transition: transform 0.6s ease, background-color 0.6s ease; /* Apply a transition for the transform property */
+    transition: transform 0.6s ease, background-color 0.6s ease; 
 }
 
 div#githubIcon:hover, div#linkedInIcon:hover, div#mailIcon:hover {
-    background-color: rgb(251 191 36);
-    transform: rotate(360deg); /* Rotate the icon 360 degrees on hover */
+    background-color: rgb(255, 207, 85);
+    transform: rotate(360deg); 
 }
+
+.navPaths {
+    background-color: transparent;
+    transition: background-color 0.6s ease;
+}
+
+.navPaths:hover {
+    background-color: rgb(255, 207, 85);
+} */
