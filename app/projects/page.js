@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Finding_Friends_SS from "../../public/Finding_Friends_SS.png";
 import Memora_SS from "../../public/Memora_SS.png";
-import Not_In_Vein_SS from "../../public/Not_In_Vein_SS.png";
+import NIV_SS from "../../public/NIV_SS.png";
 
 const ProjectInfo = [
     {
@@ -15,7 +15,7 @@ const ProjectInfo = [
         title: "Not In Vein",
         description: "Centralized reminder application for blood donation donors to track their past donations and remind them of upcoming ones via notifications, email, and text.",
         link: "https://github.com/JeffLi117/Not-In-Vein",
-        ImgSrc: Not_In_Vein_SS,
+        ImgSrc: NIV_SS,
     },
     {
         title: "Finding Friends",
@@ -27,17 +27,17 @@ const ProjectInfo = [
 
 function page() {
   return (
-    <div className="animate-fadeIn flex flex-col justify-start items-start gap-4 pt-2 px-2">
-      <div className="text-3xl text-slate-400 flex text-center text-bold">PROJECTS</div>
-      {ProjectInfo.map((item) => {
+    <div className="animate-fadeIn flex flex-col justify-start items-start gap-4 p-2">
+      <div className="text-3xl text-slate-400 flex text-center text-bold px-8">PROJECTS</div>
+      {ProjectInfo.map((item, index) => {
         return (
-            <div className="pb-4">
+            <div className="pb-4 w-full px-8" key={index}>
                 <a href={`${item.link}`}>
                     <div className="flex justify-center items-center">
                         <Image
                             src={item.ImgSrc}
                             className="rounded-lg shadow-lg shadow-slate-500"
-                            height={250}
+                            height="100%"
                             width="100%"
                             alt="project item image"
                         />

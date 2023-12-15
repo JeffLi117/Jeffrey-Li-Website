@@ -1,13 +1,15 @@
 // "use client";
 function aboutPage() {
     return (
-        <div className="flex flex-col justify-start items-start gap-4 pt-2 px-2 animate-fadeIn">
+        <div className="animate-fadeIn flex flex-col justify-start items-start gap-4 p-2">
             {/* insert photo here? */}
-            <div className="text-3xl text-slate-400 text-bold">ABOUT</div>
-            <h2 className="text-2xl text-bold">Hello, I'm Jeffrey Li!</h2>
-            <p>I'm a full-stack software developer with a background in medicine. I aim to use my combination of skills to bring about a better quality of life for people around the world. I have created front-end components optimizing user experiences at OptiChroniX, an application for patients with dementia and their caretakers.</p>
-            <p>I'm in the process of creating <a href="https://github.com/JeffLi117/Not-In-Vein">Not In Vein</a>, a centralized reminder application to help remind blood donors to keep giving back to others.</p>
-            <p>Outside of software, I enjoy eating all the pizza, reading fantasy novels (especially those with dragons!), binging TV shows, and rock climbing.</p>
+            <div className="text-3xl text-slate-400 flex text-center text-bold px-8">ABOUT</div>
+            <div className="pb-4 w-full px-8 flex flex-col justify-start items-start gap-4">
+                <h2 className="text-2xl font-bold">Hello, I'm Jeffrey Li!</h2>
+                <p>I'm a full-stack software developer with a background in medicine. I aim to use my combination of skills to bring about a better quality of life for people around the world. I' created front-end components optimizing user experiences at OptiChroniX, a React Native mobile application for patients with dementia and their caretakers.</p>
+                <p>I'm in the process of creating <a href="https://github.com/JeffLi117/Not-In-Vein" className="hover:text-red-200 transition ease-in-out underline">Not In Vein</a>, a centralized web application to remind blood donors when they can give back to others again, as well as aid in searching for nearby donation locations.</p>
+                <p>Outside of software, I enjoy eating all the pizza, reading fantasy novels (especially those with dragons!), cooking, and rock climbing.</p>
+            </div>
         </div>
     )
 }

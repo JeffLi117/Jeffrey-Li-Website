@@ -1,17 +1,22 @@
 "use client"
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useRef, useContext, useState, useEffect } from "react";
 import { LightContext } from "@/app/layout";
-import { sendEmail } from "@/app/actions";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { sendEmail, verifyReCAPTCHA } from "@/app/actions";
+import { FaRegCheckCircle, FaRobot } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
+import ReCAPTCHA from "react-google-recaptcha";
+import 'dotenv/config';
 
 function EmailMeForm() {
+  const recaptcha = useRef();
   const { isLight } = useContext(LightContext);
   const [submitForm, setSubmitForm] = useState({});
   const [isFormValid, setIsFormValid] = useState(false); 
   const [isFormChecked, setIsFormChecked] = useState(false); 
+  const [isReCAPTCHAVerified, setIsReCAPTCHAVerified] = useState(false); 
   const [errors, setErrors] = useState({}); 
   const [sentResult, setSentResult] = useState(); 
+
   // == Check form inputs  ==
   const checkForm = (name, message) => {
 
@@ -57,16 +62,37 @@ function EmailMeForm() {
     }        
   }; 
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const captchaValue = recaptcha.current.getValue();
+    // console.log("captchaValue is ", captchaValue);
+    // console.log("typeof captchaValue is ", typeof captchaValue);
+
+    if (!captchaValue) {
+      alert("Please verify that you're a human with the ReCAPTCHA.");
+    }
+
     // == Check honeypots ==
     if (formData.get("_honey") !== "" || formData.get("honey_2") !== "") {
-      return
+      return;
     }
-    
+
+    try {
+      const res = await verifyReCAPTCHA(captchaValue);
+      console.log("res from await verifyReCAPTCHA ", res);
+      if (res?.success) {
+        setIsReCAPTCHAVerified(true)
+      } else {
+        errors.
+        setErrors
+      }
+    } catch (err) {
+      console.log(err);
+      setSentResult(false)
+    }
+
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
@@ -99,12 +125,17 @@ function EmailMeForm() {
         setSentResult(false)
       }
     }
-    if (isFormChecked && isFormValid) { 
-      console.log("both check & validation are true");
+    if (isFormChecked && isFormValid && isReCAPTCHAVerified) { 
+      setErrors({});
+      console.log("both check & validation are true, as well as ReCAPTCHA!");
       useEffectSubmit(submitForm);
     } 
     return () => {};
-  }, [isFormChecked, isFormValid])
+  }, [isFormChecked, isFormValid, isReCAPTCHAVerified])
+
+  useEffect(() => {
+    console.log("errors is now ", errors)
+  }, [errors])
 
   return (
     <div className="w-full">
@@ -120,10 +151,10 @@ function EmailMeForm() {
             {(errors.email) && <p className="text-red">{errors.email}</p>} 
             {(errors.message) && <p className="text-red">{errors.message}</p>} 
 
+            <ReCAPTCHA ref={recaptcha} sitekey={process.env.NEXT_PUBLIC_SITE_KEY} />
             {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-full border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}>Send</button>}
             {sentResult === true && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><FaRegCheckCircle /> Sent!</button>}
             {sentResult === false && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><MdErrorOutline /> Oops! Something went wrong.</button>}
-            
         </form>
     </div>
     

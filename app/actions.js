@@ -1,5 +1,7 @@
 'use server';
 const sgMail = require('@sendgrid/mail');
+const axios = require("axios");
+require("dotenv").config();
 
 export async function sendEmail(data) {
     const apiKey = process.env.SENDGRID_API_KEY;
@@ -22,41 +24,28 @@ export async function sendEmail(data) {
     try{
       console.log('sgMail started');
       const res = await sgMail.send(msg);
-      console.log('sgMail finished', res);
-      return {success: res[0]}
+      console.log('sgMail finished');
+      console.log('res[0].statusCode ', res[0].statusCode);
+      return {success: res[0].statusCode}
     } catch (err) {
       console.log(err);
       return { error: err.message };
     } 
 }
 
- async function addContactToDB(formData) {
-    // Assuming 'ContactForms' is the name of your table
-    const { data, error } = await supabase
-      .from('ContactForms')
-      .insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          // Map other fields accordingly
-        },
-      ])
-      .select()
-
-    if (error) {
-      console.error('Error inserting data:', error);
-      // add error handling for client-side for not saving to DB
-      return { error: err.message };
-    } else {
-      try {
-        console.log('Data inserted successfully:', data[0]);
-        await sendEmail(data[0]);
-        return {success: data[0].id}
-      } catch (err) {
-        console.log("SendGrid err is: ", err.message)
-        // handle error for SendGrid failure
-        return { error: err.message };
-      }
-    }
+export async function verifyReCAPTCHA(captchaValue) {
+  const SITE_SECRET = process.env.SITE_SECRET;
+  try{
+    console.log('verifyReCAPTCHA started');
+    const { data } = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${SITE_SECRET}&response=${captchaValue}`
+    );
+    console.log('verifyReCAPTCHA finished');
+    console.log('data ', data);
+    return {success: data}
+  } catch (err) {
+    console.log(err);
+    return { error: err.message };
+  } 
+  
 }

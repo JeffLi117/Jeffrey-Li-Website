@@ -13,7 +13,7 @@ export default function FadingEffect() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 2500); 
+    }, 4500); 
 
     return () => {
       clearInterval(intervalId);
@@ -21,11 +21,11 @@ export default function FadingEffect() {
   }, []);
 
   return (
-    <div className={`md:min-h-[80px] text-2xl font-light grid place-items-center text-slate-400 ${rm.className}`}>
+    <div className={`md:min-h-[80px] text-2xl font-light grid grid-rows-1 grid-cols-1 place-items-center text-slate-400 ${rm.className}`}>
       {titles.map((title, index) => (
         <span
           key={index}
-          className={`inline-block whitespace-nowrap transition-opacity duration-1000 ${currentTitleIndex === index ? "opacity-100" : "opacity-0"}`}
+          className={`inline-block whitespace-nowrap row-start-1 row-end-2 col-start-1 col-end-2 transition-opacity duration-1000 ${currentTitleIndex === index ? "opacity-100" : "opacity-0"}`}
         >
           {title}
         </span>
