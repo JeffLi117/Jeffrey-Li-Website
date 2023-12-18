@@ -32,11 +32,11 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center p-2">
           <TypingEffect />
         </div>
-        <div className="flex flex-col items-center text-left justify-center px-10 md:px-20 py-2">
+        <div className="flex flex-col items-start md:items-center text-left justify-center px-10 md:px-20 py-2">
           <div>Have questions? Want to collaborate?</div>
           <div>Message me about anything!</div>
         </div>
-        <div className="flex flex-col items-center text-left justify-center px-10 md:px-20 py-2">
+        <div className="flex flex-col items-center text-left justify-center px-10 md:px-36 lg:px-56 py-2">
           <EmailMeForm />
         </div>
       </div>

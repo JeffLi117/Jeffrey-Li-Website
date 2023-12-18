@@ -27,8 +27,8 @@ const ProjectInfo = [
 
 function page() {
   return (
-    <div className="animate-fadeIn flex flex-col justify-start items-start gap-4 p-2">
-      <div className="text-3xl text-slate-400 flex text-center text-bold px-8">PROJECTS</div>
+    <div className="animate-fadeIn flex flex-col justify-start items-start gap-4 p-2 lg:p-20">
+      <div className="text-3xl text-slate-400 flex text-center text-bold px-8 pb-4">PROJECTS</div>
       {ProjectInfo.map((item, index) => {
         return (
             <div className="pb-4 w-full px-8" key={index}>

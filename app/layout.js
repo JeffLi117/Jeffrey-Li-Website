@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body className={`min-h-screen relative font-sans md:px-24 ${isLight ? "md:bg-[url('../public/white-pattern.jpg')]" : "md:bg-[url('../public/dark-pattern.jpg')]"}  lg:px-36`}>
+      <body className={`min-h-screen relative font-sans md:px-24 ${isLight ? "md:bg-[url('../public/white-pattern.jpg')]" : "md:bg-[url('../public/dark-pattern.jpg')]"} md:px-36 lg:px-64`}>
         <LightContext.Provider
             value={{ isLight, outerLightHandler }}
           >
