@@ -7,10 +7,10 @@ import Nav from '@/components/Nav';
 import { BsSun, BsMoon } from "react-icons/bs";
 config.autoAddCss = false;
 
-export const metadata = {
-  title: "Jeffrey's Personal Portfolio Website",
-  description: "Jeffrey's Personal Portfolio Website",
-}
+// export const metadata = {
+//   title: "Jeffrey's Personal Portfolio Website",
+//   description: "Jeffrey's Personal Portfolio Website",
+// }
 
 export const LightContext = createContext();
 
