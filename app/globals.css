@@ -20,21 +20,21 @@ div#light-toggle {
     left: 10px;
 }
 
-/* div#githubIcon, div#linkedInIcon, div#mailIcon {
-    background-color: transparent;
-    transition: transform 0.6s ease, background-color 0.6s ease; 
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-div#githubIcon:hover, div#linkedInIcon:hover, div#mailIcon:hover {
-    background-color: rgb(255, 207, 85);
-    transform: rotate(360deg); 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
 }
 
-.navPaths {
-    background-color: transparent;
-    transition: background-color 0.6s ease;
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
 }
 
-.navPaths:hover {
-    background-color: rgb(255, 207, 85);
-} */
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

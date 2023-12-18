@@ -1,6 +1,6 @@
 "use client"
-import { createContext, useRef, useContext, useState, useEffect } from "react";
-import { LightContext } from "@/app/layout";
+import { useRef, useState, useEffect } from "react";
+import { LightAuth } from "./LightMode";
 import { sendEmail, verifyReCAPTCHA } from "@/app/actions";
 import { FaRegCheckCircle, FaRobot } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
@@ -9,7 +9,7 @@ import 'dotenv/config';
 
 function EmailMeForm() {
   const reCaptchaRef = useRef();
-  const { isLight } = useContext(LightContext);
+  const { isLight } = LightAuth();
   const [submitForm, setSubmitForm] = useState({});
   const [isFormValid, setIsFormValid] = useState(false); 
   const [isFormChecked, setIsFormChecked] = useState(false); 
@@ -135,7 +135,7 @@ function EmailMeForm() {
 
   return (
     <div className="w-full">
-        <form className="relative flex md:px-20 flex-col gap-2 md:gap-4 justify-center items-center" method="POST" action="/form" onSubmit={handleSubmit}>
+        <form className="relative flex flex-col gap-2 md:gap-4 justify-center items-center" method="POST" action="/form" onSubmit={handleSubmit}>
             <input type="hidden" name="access_key" value="7ba84f65-f451-43da-8ecb-b808b6c4164b"/>
             <input type="text" name="_honey" className="hidden" aria-hidden="true" />
             <input type="text" name="honey_2" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>

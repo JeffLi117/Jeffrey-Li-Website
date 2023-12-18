@@ -1,5 +1,8 @@
+"use client";
 import React from 'react';
+import { LightAuth } from '@/components/LightMode';
 import Image from 'next/image';
+import Nav from '@/components/Nav';
 import Finding_Friends_SS from "../../public/Finding_Friends_SS.png";
 import Memora_SS from "../../public/Memora_SS.png";
 import NIV_SS from "../../public/NIV_SS.png";
@@ -26,53 +29,33 @@ const ProjectInfo = [
 ]
 
 function page() {
+  const { isLight } = LightAuth();
+  
   return (
-    <div className="animate-fadeIn flex flex-col justify-start items-start gap-4 p-2 lg:p-20">
-      <div className="text-3xl text-slate-400 flex text-center text-bold px-8 pb-4">PROJECTS</div>
-      {ProjectInfo.map((item, index) => {
-        return (
-            <div className="pb-4 w-full px-8" key={index}>
-                <a href={`${item.link}`}>
-                    <div className="flex justify-center items-center">
-                        <Image
-                            src={item.ImgSrc}
-                            className="rounded-lg shadow-lg shadow-slate-500"
-                            height="100%"
-                            width="100%"
-                            alt="project item image"
-                        />
-                    </div>
-                    <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
-                    <p>{item.description}</p>
-                </a>
-            </div>
-            
-        )
-      })}
-        {/* <a href="https://jeffli117.github.io/Finding-Friends/" className="div-inside">
-          <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full">
-            <li className="text-xl portfolio-header m-2 font-bold md:text-2xl"><span className="span-inside">Finding Friends</span></li>
-            <li className="mx-3 mb-1"><span>A "Where's Waldo" game that gives you the opportunity to get on the leaderboard!</span></li>
-            <li className="mx-3 mb-1"><span>Stack: React, JS, Webpack, Firebase, CSS </span></li>
-          </div>
-        </a>
-
-        <a href="https://jeffli117.github.io/Shop-Till-You-Drop/" className="div-inside">
-          <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full">
-            <li className="text-xl portfolio-header m-2 font-bold w-4/5 md:text-2xl"><span className="span-inside">Movie Poster Madness</span></li>
-            <li className="mx-3 mb-1"><span>Fully functional front-end shopping cart app developed with React Hooks.</span></li>
-            <li className="mx-3 mb-1"><span>Stack: React, JS, Webpack, CSS </span></li>
-          </div>
-        </a>  
-        
-        <a href="https://github.com/JeffLi117/Memora" className="div-inside">
-          <div className="bg-gray-800/75 flex flex-col justify-left items-start gap-2 mt-4 p-2 w-full">
-            <li className="text-xl portfolio-header m-2 font-bold w-4/5 md:text-2xl"><span className="span-inside">Memora</span></li>
-            <li className="mx-3 mb-1"><span>Full-stack note-taking app designed for those who need help remembering important information by using built-in reminders.</span></li>
-            <li className="mx-3 mb-1"><span>Synchronization with Firebase for data storage and user authentication.</span></li>
-            <li className="mx-3 mb-1"><span>Stack: Sveltekit, Firebase, CSS </span></li>
-          </div>
-        </a> */}
+    <div className={`min-h-screen font-sans ${isLight ? "md:bg-[url('../public/white-pattern.jpg')]" : "md:bg-[url('../public/dark-pattern.jpg')]"} md:px-28 lg:px-48`}>
+      <div className={`relative min-h-screen w-full animate-fadeIn h-[calc(100%-40px)] md:h-[calc(100%-55px)] pt-[50px] md:p-2 animate-fadeIn flex flex-col justify-start items-start gap-4 p-2 lg:px-20 lg:pb-2 ${isLight ? "bg-white text-cyan-900" : "bg-cyan-900 text-white"}`}>
+        <Nav />
+        <div className="text-3xl text-slate-400 flex text-center text-bold px-8 pb-4 md:pt-12">PROJECTS</div>
+        {ProjectInfo.map((item, index) => {
+          return (
+              <div className="pb-2 w-full px-8" key={index}>
+                  <a href={`${item.link}`}>
+                      <div className="flex justify-center items-center">
+                          <Image
+                              src={item.ImgSrc}
+                              className="rounded-lg shadow-lg shadow-slate-500"
+                              height="100%"
+                              width="100%"
+                              alt="project item image"
+                          />
+                      </div>
+                      <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
+                      <p>{item.description}</p>
+                  </a>
+              </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
