@@ -5,7 +5,7 @@ import Nav from '@/components/Nav';
 function aboutPage() {
     const { isLight } = LightAuth();
     return (
-        <div className={`min-h-screen font-sans ${isLight ? "md:bg-[url('../public/white-pattern.jpg')]" : "md:bg-[url('../public/dark-pattern.jpg')]"} md:px-28 lg:px-48`}>
+        <div className={`min-h-screen ${isLight ? "md:bg-[url('../public/white-pattern.jpg')]" : "md:bg-[url('../public/dark-pattern.jpg')]"} md:px-28 lg:px-48`}>
             <div className={`relative min-h-screen w-full animate-fadeIn h-[calc(100%-40px)] md:h-[calc(100%-55px)] pt-[50px] md:p-2 animate-fadeIn flex flex-col justify-start items-start gap-4 p-2 lg:px-20 lg:pb-2 ${isLight ? "bg-white text-cyan-900" : "bg-cyan-900 text-white"}`}>
                 <Nav />
                 {/* insert photo here? */}

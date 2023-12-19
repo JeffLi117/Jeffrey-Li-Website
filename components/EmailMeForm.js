@@ -135,19 +135,31 @@ function EmailMeForm() {
 
   return (
     <div className="w-full">
-        <form className="relative flex flex-col gap-2 md:gap-4 justify-center items-center" method="POST" action="/form" onSubmit={handleSubmit}>
+        <form className="relative flex flex-col gap-4 justify-start items-start" method="POST" action="/form" onSubmit={handleSubmit}>
             <input type="hidden" name="access_key" value="7ba84f65-f451-43da-8ecb-b808b6c4164b"/>
             <input type="text" name="_honey" className="hidden" aria-hidden="true" />
             <input type="text" name="honey_2" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>
             <input type="checkbox" name="botcheck" className="hidden"/>
-            <input type="text" name="name" placeholder="Your name" className={`border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
-            <input type="email" name="email" placeholder="Your email" className={`border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
-            <textarea name="message" placeholder="Your message ..." className={`border border-2 border-slate-400 bg-transparent w-full px-1 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required></textarea>
-            {(errors.name) && <p className="text-red">{errors.name}</p>} 
-            {(errors.email) && <p className="text-red">{errors.email}</p>} 
-            {(errors.message) && <p className="text-red">{errors.message}</p>} 
+
+            <div className="w-full text-sm text-gray-500">
+              <label htmlFor="name">NAME <span className="text-red-700">*</span></label>
+              <input type="text" name="name" placeholder="Your name" className={`h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full px-2 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
+              {(errors.name) && <p className="text-red">{errors.name}</p>} 
+            </div>
             
-            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-full border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}>Send</button>}
+            <div className="w-full text-sm text-gray-500">
+              <label htmlFor="email">EMAIL <span className="text-red-700">*</span></label>
+              <input type="email" name="email" placeholder="Your email" className={`h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full px-2 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
+              {(errors.email) && <p className="text-red">{errors.email}</p>} 
+            </div>
+            
+            <div className="w-full text-sm text-gray-500">
+              <label htmlFor="message">MESSAGE <span className="text-red-700">*</span></label>
+              <textarea name="message" rows="5" placeholder="Your message ..." className={`min-h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full p-2 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required></textarea>
+              {(errors.message) && <p className="text-red">{errors.message}</p>} 
+            </div>
+            
+            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}>Send Message</button>}
             {sentResult === true && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><FaRegCheckCircle /> Sent!</button>}
             {sentResult === false && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><MdErrorOutline /> Oops! Something went wrong.</button>}
             <ReCAPTCHA
