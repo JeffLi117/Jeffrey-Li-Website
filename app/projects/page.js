@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import { LightAuth } from '@/components/LightMode';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Finding_Friends_SS from "../../public/Finding_Friends_SS.png";
@@ -29,10 +28,9 @@ const ProjectInfo = [
 ]
 
 function page() {
-  // const { isLight } = LightAuth();
   
   return (
-    <section className="relative mx-4 h-full pb-8">
+    <section className="relative mx-4 h-full pb-8 md:mx-16 lg:mx-44">
       <Navbar />
       <div className={`flex flex-col justify-start items-start gap-4 p-2`}>
         <div className="text-3xl text-bold mb-1">Projects</div>

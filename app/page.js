@@ -2,14 +2,12 @@
 import Image from "next/image";
 import TypingEffect from "@/components/TypingEffect";
 import Navbar from "@/components/Navbar";
-import { LightAuth } from "@/components/LightMode";
 import Headshot_Mononoke_Square from "../public/Headshot_Mononoke_Square.jpg";
 import EmailMeForm from "@/components/EmailMeForm";
 
 export default function Home() {
-  const { isLight } = LightAuth();
   return (
-    <section className="relative mx-4 h-full">
+    <section className="relative mx-4 h-full md:mx-16 lg:mx-44">
       <Navbar />
       <div className="p-6 bg-purple-100 mt-12 rounded-lg">
         <div className="text-3xl mb-4">

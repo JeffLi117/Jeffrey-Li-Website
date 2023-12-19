@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import { LightAuth } from "@/components/LightMode";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import OptiChroniX_SS from "../../public/OptiChroniX_SS.png";
 import HUP_SS from "../../public/HUP_SS.png";
 import OCG_SS from "../../public/OCG_SS.png";
 
-const WorkInfo = [
+export const WorkInfo = [
   {
     company: "One Community Global",
     title: "Full-Stack Software Developer & Team Assistant Manager",
@@ -18,6 +18,7 @@ const WorkInfo = [
       "Consistently provide comprehensive weekly summary reports, videos, and snapshots of implemented changes, ensuring transparency, accountability, and improved project coordination"
     ],
     ImgSrc: OCG_SS,
+    route: "ocg"
   },
   {
     company: "OptiChroniX",
@@ -31,6 +32,7 @@ const WorkInfo = [
       "Implemented Jest unit testing to increase resiliency against multiple use cases, such as scenarios of user authentication and button-click interactions"
     ],
     ImgSrc: OptiChroniX_SS,
+    route: "optichronix"
   },
   {
     company: "Humanity Uplifting People",
@@ -41,12 +43,12 @@ const WorkInfo = [
       "Leveraged advanced web development practices to boost HUP's online presence, resulting in an improvement in search engine rankings and increased organic traffic"
     ],
     ImgSrc: HUP_SS,
+    route: "hup"
   },
 ]
 
 
 function resumePage() {
-  const { isLight } = LightAuth();
   const [indicesOpen, setIndicesOpen] = useState([])
   
   const toggleIndex = (num) => {
@@ -63,32 +65,36 @@ function resumePage() {
   }
 
   return (
-    <section className="relative mx-4 h-full pb-8">
+    <section className="relative mx-4 h-full pb-8 md:mx-16 lg:mx-44">
         <Navbar />
-        <div className={`flex flex-col justify-start items-start gap-4 p-2`}>
+        <div className={`flex flex-col justify-start items-start gap-8 p-2`}>
           <div className="text-3xl text-bold mb-1">Resume</div>
           <div className="mb-4">My work & volunteer experience.</div>
           {WorkInfo.map((item, index) => {
             return (
-              <div className="pb-2 w-full" key={index}>
-                <div className="flex justify-center items-center pb-2">
-                  <Image
-                    src={item.ImgSrc}
-                    className="rounded-lg shadow-lg shadow-slate-500"
-                    height="100%"
-                    width="100%"
-                    alt="project item image"
-                  />
+              <div className="pb-2 w-full md:grid md:grid-cols-[60%,35%] md:gap-12" key={index}>
+                <div className="flex justify-center items-center pb-2 hover:scale-[1.05]">
+                  <Link href={`/resume/${item.route}`}>
+                    <Image
+                      src={item.ImgSrc}
+                      className="rounded-lg shadow-lg shadow-slate-500"
+                      height="100%"
+                      width="100%"
+                      alt="resume item image"
+                    />
+                  </Link>
                 </div>
-                <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
-                <h3 className="text-xl text-left">@ {item.company}</h3>
-                <button type="button" onClick={() => toggleIndex(index)} className={`w-fit p-2 my-1 bg-purple-200 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}>View Details</button>
-                <ul className={`${(indicesOpen.includes(index)) ? "block" : "hidden"}`}>
-                  <p className="my-2 italic">{item.dates}</p>
-                  {item.responsibilities.map((detail, index) => {
-                    return <li key={"inner"+index} className="my-1"><span>&#8226;</span> {detail}</li>
-                  })}
-                </ul>
+                <div>
+                  <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
+                  <h3 className="text-xl text-left">@ {item.company}</h3>
+                  <button type="button" onClick={() => toggleIndex(index)} className={`w-fit p-2 my-2 md:my-4 bg-purple-200 border border-white border-2 rounded-lg`}>View Details</button>
+                  {/* <ul className={`${(indicesOpen.includes(index)) ? "block" : "invisible"}`}>
+                    <p className="my-2 italic">{item.dates}</p>
+                    {item.responsibilities.map((detail, index) => {
+                      return <li key={"inner"+index} className="my-1"><span>&#8226;</span> {detail}</li>
+                    })}
+                  </ul> */}
+                </div>
               </div>
             )
           })}
