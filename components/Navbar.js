@@ -46,13 +46,13 @@ export default function Navbar() {
                     </div>
                 </Link>
                 <ul className="flex justify-start items-start gap-4">
-                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/resume" ? "text-slate-400" : ""}`}>
+                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/experience" ? "text-slate-400" : ""}`}>
                             <Link 
-                                onClick={()=> setPathName("/resume")} href="/resume"
-                                className={`${pathName === "/resume" ? "pointer-events-none" : ""}`} 
-                                aria-disabled={`${pathName === "/resume" ? "true" : ""}`} 
+                                onClick={()=> setPathName("/experience")} href="/experience"
+                                className={`${pathName === "/experience" ? "pointer-events-none" : ""}`} 
+                                aria-disabled={`${pathName === "/experience" ? "true" : ""}`} 
                             >
-                                Resume
+                                Experience
                             </Link>
                         </li>
                     
