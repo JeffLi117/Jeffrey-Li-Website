@@ -51,7 +51,7 @@ function resumePage() {
                   <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
                   <h3 className="text-xl text-left">@ {item.company}</h3>
                   <Link href={`/resume/${item.route}`}>
-                    <button type="button" className={`w-fit p-2 my-2 md:my-4 bg-purple-200 border border-white border-2 rounded-lg`}>View Details</button>
+                    <button type="button" className={`w-fit p-2 my-2 md:my-4 bg-purple-200 border border-white border-4 rounded-full hover:bg-white hover:border-purple-400 hover:text-purple-400 transition ease-in-out`}>View Details</button>
                   </Link>
                 </div>
               </div>

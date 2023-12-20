@@ -12,6 +12,10 @@ export default function Navbar() {
   useEffect(() => {
     setPathName(window.location.pathname);
   }, [])
+  
+  useEffect(() => {
+    console.log("pathName is ", pathName);
+  }, [pathName])
 
   return (
     <section className="mb-4 pt-4">
@@ -42,27 +46,36 @@ export default function Navbar() {
                     </div>
                 </Link>
                 <ul className="flex justify-start items-start gap-4">
-                    <Link 
-                        onClick={()=> setPathName("/resume")} href="/resume"
-                        className={`${pathName === "/resume" ? "pointer-events-none" : ""}`} 
-                        aria-disabled={`${pathName === "/resume" ? "true" : ""}`} 
-                    >
-                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/resume" ? "text-slate-400" : ""}`}>Resume</li>
-                    </Link>
-                    <Link 
-                        onClick={()=> setPathName("/projects")} href="/projects"
-                        className={`${pathName === "/projects" ? "pointer-events-none" : ""}`} 
-                        aria-disabled={`${pathName === "/projects" ? "true" : ""}`} 
-                    >
-                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/projects" ? "text-slate-400" : ""}`}>Projects</li>
-                    </Link>
-                    <Link 
-                        onClick={()=> setPathName("/contact")} href="/contact"
-                        className={`${pathName === "/contact" ? "pointer-events-none" : ""}`} 
-                        aria-disabled={`${pathName === "/contact" ? "true" : ""}`} 
-                    >
-                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/contact" ? "text-slate-400" : ""}`}>Contact</li>
-                    </Link>
+                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/resume" ? "text-slate-400" : ""}`}>
+                            <Link 
+                                onClick={()=> setPathName("/resume")} href="/resume"
+                                className={`${pathName === "/resume" ? "pointer-events-none" : ""}`} 
+                                aria-disabled={`${pathName === "/resume" ? "true" : ""}`} 
+                            >
+                                Resume
+                            </Link>
+                        </li>
+                    
+                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/projects" ? "text-slate-400" : ""}`}>
+                            <Link 
+                                onClick={()=> setPathName("/projects")} href="/projects"
+                                className={`${pathName === "/projects" ? "pointer-events-none" : ""}`} 
+                                aria-disabled={`${pathName === "/projects" ? "true" : ""}`} 
+                            >
+                                Projects
+                            </Link>
+                        </li>
+                    
+                        <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/contact" ? "text-slate-400" : ""}`}>
+                            <Link 
+                                onClick={()=> setPathName("/contact")} href="/contact"
+                                className={`${pathName === "/contact" ? "pointer-events-none" : ""}`} 
+                                aria-disabled={`${pathName === "/contact" ? "true" : ""}`} 
+                            >
+                                Contact
+                            </Link>
+                        </li>
+                    
                 </ul>
             </div>
         </div>

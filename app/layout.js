@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body className={`${rubik.className} relative animate-fadeIn min-h-screen mx-4 md:mx-16 lg:mx-44`}>
+      <body className={`${rubik.className} relative animate-fadeIn min-h-screen mx-4 md:mx-16 lg:mx-44 xl:px-52`}>
         <LightContextProvider>
           <Navbar />
           {children}

@@ -159,9 +159,9 @@ function EmailMeForm() {
               {(errors.message) && <p className="text-red">{errors.message}</p>} 
             </div>
             
-            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-2 rounded-lg`}>Send Message</button>}
-            {sentResult === true && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><FaRegCheckCircle /> Sent!</button>}
-            {sentResult === false && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><MdErrorOutline /> Oops! Something went wrong.</button>}
+            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-4 rounded-full hover:bg-white hover:border-purple-400 hover:text-purple-400 transition ease-in-out`}>Send Message</button>}
+            {sentResult === true && <button type="button" className={`w-fit flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}><FaRegCheckCircle /> Sent!</button>}
+            {sentResult === false && <button type="button" className={`w-fit flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}><MdErrorOutline /> Oops! Something went wrong.</button>}
             <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
               size="invisible"

@@ -1,6 +1,5 @@
 import OptiChroniX_SS from "../../../public/OptiChroniX_SS.png";
 import Image from "next/image";
-import BackButtonR from "@/components/BackButtonR";
 
 const info = {
     company: "OptiChroniX",
@@ -19,7 +18,7 @@ const info = {
 
 function page() {
     return (
-        <section className="relative h-full pb-8">
+        <section className="relative h-full pb-12">
           <div className={`flex flex-col justify-start items-center gap-8 p-2`}>
             <div className="text-3xl text-bold mb-1">{info.company}</div>
             <div className="md:mb-4">{info.description}</div>
@@ -33,11 +32,10 @@ function page() {
             <ul>
               <p className="my-2 italic">{info.dates}</p>
               {info.responsibilities.map((detail, index) => {
-                  return <li key={"inner"+index} className="my-1"><span>&#8250;</span> {detail}</li>
+                  return <li key={"inner"+index} className="my-2"><span>&#8250;</span> {detail}</li>
               })}
             </ul>
           </div>
-          <BackButtonR />
       </section>
     )
   }
