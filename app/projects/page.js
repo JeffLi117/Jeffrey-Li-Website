@@ -1,7 +1,4 @@
-"use client";
-import React from 'react';
 import Image from 'next/image';
-import Navbar from '@/components/Navbar';
 import Finding_Friends_SS from "../../public/Finding_Friends_SS.png";
 import Memora_SS from "../../public/Memora_SS.png";
 import NIV_SS from "../../public/NIV_SS.png";
@@ -30,16 +27,15 @@ const ProjectInfo = [
 function page() {
   
   return (
-    <section className="relative mx-4 h-full pb-8 md:mx-16 lg:mx-44">
-      <Navbar />
+    <section className="relative h-full pb-8">
       <div className={`flex flex-col justify-start items-start gap-4 p-2`}>
         <div className="text-3xl text-bold mb-1">Projects</div>
         <div className="mb-4">Things I tinker with.</div>
         {ProjectInfo.map((item, index) => {
           return (
-            <div className="pb-2 w-full" key={index}>
+            <div className="pb-2 w-full md:grid md:grid-cols-[60%,35%] md:gap-12" key={index}>
                 <a href={`${item.link}`}>
-                  <div className="flex justify-center items-center pb-2">
+                  <div className="flex justify-center items-center pb-2 hover:scale-[1.05]">
                     <Image
                         src={item.ImgSrc}
                         className="rounded-lg shadow-lg shadow-slate-500"
@@ -48,9 +44,11 @@ function page() {
                         alt="project item image"
                     />
                   </div>
-                  <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
-                  <p>{item.description}</p>
                 </a>
+                <div>
+                  <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
+                  <p className="my-4">{item.description}</p>
+                </div>
             </div>
           )
         })}

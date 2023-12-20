@@ -143,23 +143,23 @@ function EmailMeForm() {
 
             <div className="w-full text-sm text-gray-500">
               <label htmlFor="name">NAME <span className="text-red-700">*</span></label>
-              <input type="text" name="name" placeholder="Your name" className={`h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full px-2 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
+              <input type="text" name="name" placeholder="Your name" className={`h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full px-2 rounded-lg`} required/>
               {(errors.name) && <p className="text-red">{errors.name}</p>} 
             </div>
             
             <div className="w-full text-sm text-gray-500">
               <label htmlFor="email">EMAIL <span className="text-red-700">*</span></label>
-              <input type="email" name="email" placeholder="Your email" className={`h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full px-2 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required/>
+              <input type="email" name="email" placeholder="Your email" className={`h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full px-2 rounded-lg`} required/>
               {(errors.email) && <p className="text-red">{errors.email}</p>} 
             </div>
             
             <div className="w-full text-sm text-gray-500">
               <label htmlFor="message">MESSAGE <span className="text-red-700">*</span></label>
-              <textarea name="message" rows="5" placeholder="Your message ..." className={`min-h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full p-2 rounded-lg ${isLight ? "text-cyan-900" : "text-white"}`} required></textarea>
+              <textarea name="message" rows="5" placeholder="Your message ..." className={`min-h-[42px] mt-1 border border-2 border-slate-400 bg-transparent w-full p-2 rounded-lg`} required></textarea>
               {(errors.message) && <p className="text-red">{errors.message}</p>} 
             </div>
             
-            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}>Send Message</button>}
+            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-2 rounded-lg`}>Send Message</button>}
             {sentResult === true && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><FaRegCheckCircle /> Sent!</button>}
             {sentResult === false && <button type="button" className={`w-full flex justify-center items-center gap-1 border border-white border-2 ${isLight ? "bg-cyan-900 text-white" : "bg-white text-cyan-900"} rounded-lg`}><MdErrorOutline /> Oops! Something went wrong.</button>}
             <ReCAPTCHA

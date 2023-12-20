@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Rubik } from 'next/font/google'
 import { LightContextProvider } from '@/components/LightMode';
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 config.autoAddCss = false;
 
@@ -23,8 +24,9 @@ export default function RootLayout({ children }) {
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body className={`${rubik.className} relative animate-fadeIn min-h-screen`}>
+      <body className={`${rubik.className} relative animate-fadeIn min-h-screen mx-4 md:mx-16 lg:mx-44`}>
         <LightContextProvider>
+          <Navbar />
           {children}
           <Footer />
         </LightContextProvider>

@@ -1,14 +1,9 @@
-"use client";
 import Image from "next/image";
 import TypingEffect from "@/components/TypingEffect";
-import Navbar from "@/components/Navbar";
-import Headshot_Mononoke_Square from "../public/Headshot_Mononoke_Square.jpg";
-import EmailMeForm from "@/components/EmailMeForm";
 
 export default function Home() {
   return (
-    <section className="relative mx-4 h-full md:mx-16 lg:mx-44">
-      <Navbar />
+    <section className="relative h-full">
       <div className="p-6 bg-purple-100 mt-12 rounded-lg">
         <div className="text-3xl mb-4">
           👋 Hi, I'm Jeffrey.

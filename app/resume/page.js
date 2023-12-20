@@ -1,8 +1,5 @@
-"use client";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import OptiChroniX_SS from "../../public/OptiChroniX_SS.png";
 import HUP_SS from "../../public/HUP_SS.png";
 import OCG_SS from "../../public/OCG_SS.png";
@@ -11,62 +8,28 @@ export const WorkInfo = [
   {
     company: "One Community Global",
     title: "Full-Stack Software Developer & Team Assistant Manager",
-    dates: "September 2023 - Present",
-    responsibilities: [
-      "Create components and permissions that allow client login to display related content with role-based security",
-      "Collaborated and assisted in leading a diverse team in a React, Redux, Node.js, and MongoDB environment, significantly contributing to GitHub Pull Requests",
-      "Consistently provide comprehensive weekly summary reports, videos, and snapshots of implemented changes, ensuring transparency, accountability, and improved project coordination"
-    ],
     ImgSrc: OCG_SS,
     route: "ocg"
   },
   {
     company: "OptiChroniX",
     title: "Front-End Developer Intern",
-    dates: "June 2023 - September 2023",
-    responsibilities: [
-      "Developed with React Native to implement new components for UI/UX, resulting in a 15% increase in satisfaction for +100 users",
-      "Reduced runtime errors by 20% and improved code readability by implementing TypeScript",
-      "Utilized Tailwind CSS’s utility-first approach to reduce CSS code size by 10%, resulting in faster page load times for users",
-      "Collaborated with 4 developers by using a git version control feature branch strategy and documentation through Jira which increased productivity",
-      "Implemented Jest unit testing to increase resiliency against multiple use cases, such as scenarios of user authentication and button-click interactions"
-    ],
     ImgSrc: OptiChroniX_SS,
     route: "optichronix"
   },
   {
     company: "Humanity Uplifting People",
     title: "Web Developer",
-    dates: "April 2023 - Present",
-    responsibilities: [
-      "Transformed the organization's website using Next.js and enhanced user experience and responsiveness, resulting in an increase in site traffic and improved engagement",
-      "Leveraged advanced web development practices to boost HUP's online presence, resulting in an improvement in search engine rankings and increased organic traffic"
-    ],
     ImgSrc: HUP_SS,
     route: "hup"
   },
 ]
 
 
-function resumePage() {
-  const [indicesOpen, setIndicesOpen] = useState([])
-  
-  const toggleIndex = (num) => {
-    if (indicesOpen.includes(num)) {
-      const foundIndex = indicesOpen.findIndex((element) => element === num);
-      const copyArr = indicesOpen.slice();
-      copyArr.splice(foundIndex, 1);
-      setIndicesOpen(copyArr);
-    } else {
-      const copyArr = indicesOpen.slice();
-      copyArr.push(num);
-      setIndicesOpen(copyArr);
-    }
-  }
+function resumePage() {  
 
   return (
-    <section className="relative mx-4 h-full pb-8 md:mx-16 lg:mx-44">
-        <Navbar />
+    <section className="relative h-full pb-8">
         <div className={`flex flex-col justify-start items-start gap-8 p-2`}>
           <div className="text-3xl text-bold mb-1">Resume</div>
           <div className="mb-4">My work & volunteer experience.</div>
@@ -87,13 +50,9 @@ function resumePage() {
                 <div>
                   <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
                   <h3 className="text-xl text-left">@ {item.company}</h3>
-                  <button type="button" onClick={() => toggleIndex(index)} className={`w-fit p-2 my-2 md:my-4 bg-purple-200 border border-white border-2 rounded-lg`}>View Details</button>
-                  {/* <ul className={`${(indicesOpen.includes(index)) ? "block" : "invisible"}`}>
-                    <p className="my-2 italic">{item.dates}</p>
-                    {item.responsibilities.map((detail, index) => {
-                      return <li key={"inner"+index} className="my-1"><span>&#8226;</span> {detail}</li>
-                    })}
-                  </ul> */}
+                  <Link href={`/resume/${item.route}`}>
+                    <button type="button" className={`w-fit p-2 my-2 md:my-4 bg-purple-200 border border-white border-2 rounded-lg`}>View Details</button>
+                  </Link>
                 </div>
               </div>
             )
