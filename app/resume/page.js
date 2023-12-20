@@ -36,7 +36,7 @@ function resumePage() {
           {WorkInfo.map((item, index) => {
             return (
               <div className="pb-2 w-full md:grid md:grid-cols-[60%,35%] md:gap-12" key={index}>
-                <div className="flex justify-center items-center pb-2 hover:scale-[1.05]">
+                <div className="flex justify-center items-center pb-2 hover:scale-[1.05] transition ease-in-out">
                   <Link href={`/resume/${item.route}`}>
                     <Image
                       src={item.ImgSrc}

@@ -38,7 +38,7 @@ function page() {
         {ProjectInfo.map((item, index) => {
           return (
             <div className="pb-2 w-full md:grid md:grid-cols-[60%,35%] md:gap-12" key={index}>
-              <div className="flex justify-center items-center pb-4 hover:scale-[1.05]">
+              <div className="flex justify-center items-center pb-4 hover:scale-[1.05] transition ease-in-out">
                 <Link href={`/projects/${item.route}`}>
                   <Image
                       src={item.ImgSrc}
@@ -51,7 +51,7 @@ function page() {
               </div>
               <div>
                 <h2 className="text-2xl text-left text-bold pt-2">{item.title}</h2>
-                <p className="mt-4 mb-2">{item.description}</p>
+                <p className="mt-4 mb-2 lg:leading-relaxed">{item.description}</p>
                 <Link href={`/projects/${item.route}`}>
                   <button type="button" className={`w-fit p-2 my-2 md:my-4 bg-purple-200 border border-white border-4 hover:bg-white hover:border-purple-400 hover:text-purple-400 transition ease-in-out rounded-full`}>View Details</button>
                 </Link>
