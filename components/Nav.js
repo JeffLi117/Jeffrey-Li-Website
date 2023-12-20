@@ -100,7 +100,7 @@ function Nav() {
           </Link>
         </div>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

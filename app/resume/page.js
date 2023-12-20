@@ -100,7 +100,6 @@ function resumePage() {
 
 //               <div className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Master Of Medical Sciences</span></div>
 //               <div className="m-2 font-semibold">University of North Texas Health Science Center</div>
-
 //               <div className="text-1xl bulleted-header m-2 font-bold w-4/5 md:text-2xl"><span>Bachelor of Science</span></div>
 //               <div className="m-2 font-semibold">University of Texas at Austin</div>
 //               <li className="mx-3 mb-1"><span>Business Foundations Certificate</span></li>
