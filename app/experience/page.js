@@ -8,19 +8,19 @@ export const WorkInfo = [
   {
     company: "One Community Global",
     title: "Full-Stack Software Developer & Team Assistant Manager",
-    ImgSrc: OCG_SS,
+    ImgSrc: "OCG_SS.png",
     route: "ocg"
   },
   {
     company: "OptiChroniX",
     title: "Front-End Developer Intern",
-    ImgSrc: OptiChroniX_SS,
+    ImgSrc: "OptiChroniX_SS.png",
     route: "optichronix"
   },
   {
     company: "Humanity Uplifting People",
     title: "Web Developer",
-    ImgSrc: HUP_SS,
+    ImgSrc: "HUP_SS.png",
     route: "hup"
   },
 ]
@@ -38,7 +38,7 @@ function resumePage() {
               <div className="pb-2 w-full md:grid md:grid-cols-[60%,35%] md:gap-12" key={index}>
                 <div className="flex justify-center items-center pb-2 hover:scale-[1.05] transition ease-in-out">
                   <Link href={`/experience/${item.route}`}>
-                    <Image
+                    <img
                       src={item.ImgSrc}
                       className="rounded-lg shadow-lg shadow-slate-500"
                       height="100%"

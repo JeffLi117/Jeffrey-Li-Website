@@ -9,21 +9,21 @@ const ProjectInfo = [
         title: "Memora",
         description: "Note-taking app designed for those who need help remembering important information by using built-in reminders.",
         link: "https://memora-jeffli117.vercel.app/",
-        ImgSrc: Memora_SS,
+        ImgSrc: "Memora_SS.png",
         route: "memora",
     },
     {
         title: "Not In Vein",
         description: "Centralized reminder application for blood donation donors to track their past donations and remind them of upcoming ones via notifications, email, and text.",
         link: "https://github.com/JeffLi117/Not-In-Vein",
-        ImgSrc: NIV_SS,
+        ImgSrc: "NIV_SS.png",
         route: "notinvein",
     },
     {
         title: "Finding Friends",
         description: `A "Where's Waldo" game that gives you the opportunity to get on the leaderboard!`,
         link: "https://jeffli117.github.io/Finding-Friends/",
-        ImgSrc: Finding_Friends_SS,
+        ImgSrc: "Finding_Friends_SS.png",
         route: "findfriends",
     },
 ]
@@ -40,7 +40,7 @@ function page() {
             <div className="pb-2 w-full md:grid md:grid-cols-[60%,35%] md:gap-12" key={index}>
               <div className="flex justify-center items-center pb-4 hover:scale-[1.05] transition ease-in-out">
                 <Link href={`/projects/${item.route}`}>
-                  <Image
+                  <img
                       src={item.ImgSrc}
                       className="rounded-lg shadow-lg shadow-slate-500"
                       height="100%"

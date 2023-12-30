@@ -26,8 +26,8 @@ export default function Navbar() {
                 className={`${pathName === "/" ? "pointer-events-none" : ""}`} 
                 aria-disabled={`${pathName === "/" ? "true" : ""}`} 
             >
-                <Image
-                    src={Headshot_Mononoke_Square}
+                <img
+                    src="Headshot_Mononoke_Square.jpg"
                     className="rounded-full"
                     height={100}
                     width={100}

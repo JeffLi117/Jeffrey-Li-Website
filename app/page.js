@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TypingEffect from "@/components/TypingEffect";
 
 export default function Home() {
