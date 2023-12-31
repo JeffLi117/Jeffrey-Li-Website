@@ -38,12 +38,12 @@ export default function Navbar() {
                     className={`${pathName === "/" ? "pointer-events-none" : ""}`} 
                     aria-disabled={`${pathName === "/" ? "true" : ""}`} 
                 >
-                    <div className="text-2xl">
+                    <div className="text-xl md:text-2xl">
                         <h1>Jeffrey Li</h1>
                         <hr className="w-[37px] border-b-4 border-solid rounded-full border-purple-700"/>
                     </div>
                 </Link>
-                <ul className="flex justify-start items-start gap-4">
+                <ul className="flex justify-start items-start gap-2 md:gap-4 text-xs md:text-base">
                         <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${pathName === "/experience" ? "text-slate-400" : ""}`}>
                             <Link 
                                 onClick={()=> setPathName("/experience")} href="/experience"
