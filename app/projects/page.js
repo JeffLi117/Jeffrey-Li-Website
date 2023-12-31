@@ -27,7 +27,7 @@ const ProjectInfo = [
 function page() {
   
   return (
-    <section className="relative h-full pb-8">
+    <section className="relative h-full pb-12 md:pb-8">
       <div className={`flex flex-col justify-start items-start gap-4 p-2`}>
         <div className="text-3xl text-bold mb-1">Projects</div>
         <div className="mb-4">Things I tinker with.</div>
