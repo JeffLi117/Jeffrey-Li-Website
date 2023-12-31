@@ -4,7 +4,7 @@ const info = {
     title: "Memora",
     description: ["Memora is a note-taking app with reminders designed for forgetful people.", "With Firebase integration, easily sync and access your notes, tasks, and reminders from anywhere. The intuitive interface makes capturing and organizing information a breeze.", "Boost productivity and stay on top of tasks with Memora."],
     link: "https://memora-jeffli117.vercel.app/",
-    ImgSrc: "Memora_SS.png",
+    ImgSrc: "/Memora_SS.png",
     stack: ["JavaScript", "Sveltekit", "Firebase", "Flowbite"]
 }
 
@@ -24,7 +24,7 @@ function page() {
                 })}
             </ul>
             <img
-              src="Memora_SS.png"
+              src="/Memora_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

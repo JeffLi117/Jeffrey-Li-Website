@@ -4,7 +4,7 @@ const info = {
     title: "Finding Friends",
     description: [`Do you like playing "I spy"?`,`Do you find yourself needing a break to just enjoy the beautiful scenery of a busy picture? Now you can!`,`Finding Friends is a "Where's Waldo" style game that tracks how long a player takes to find the 3 hidden characters. The player will be able to enter their name upon completion of the game and their score has the chance to be shown on the leaderboard!`, `Good luck! 🍀 (This game is best enjoyed on your desktop)`],
     link: "https://jeffli117.github.io/Finding-Friends/",
-    ImgSrc: "Finding_Friends_SS.png",
+    ImgSrc: "/Finding_Friends_SS.png",
     stack: ["JavaScript", "React.js", "Firebase"]
 }
 
@@ -24,7 +24,7 @@ function page() {
                 })}
             </ul>
             <img
-              src="Finding_Friends_SS.png"
+              src="/Finding_Friends_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

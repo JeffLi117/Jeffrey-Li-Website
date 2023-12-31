@@ -20,7 +20,7 @@ function page() {
             <div className="text-3xl text-bold mb-1">{info.company}</div>
             <div className="md:mb-4">{info.description}</div>
             <img
-              src="OptiChroniX_SS.png"
+              src="/OptiChroniX_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

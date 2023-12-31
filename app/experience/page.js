@@ -4,19 +4,19 @@ export const WorkInfo = [
   {
     company: "One Community Global",
     title: "Full-Stack Software Developer & Team Assistant Manager",
-    ImgSrc: "OCG_SS.png",
+    ImgSrc: "/OCG_SS.png",
     route: "ocg"
   },
   {
     company: "OptiChroniX",
     title: "Front-End Developer Intern",
-    ImgSrc: "OptiChroniX_SS.png",
+    ImgSrc: "/OptiChroniX_SS.png",
     route: "optichronix"
   },
   {
     company: "Humanity Uplifting People",
     title: "Web Developer",
-    ImgSrc: "HUP_SS.png",
+    ImgSrc: "/HUP_SS.png",
     route: "hup"
   },
 ]

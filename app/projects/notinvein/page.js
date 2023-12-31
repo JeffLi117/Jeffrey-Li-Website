@@ -4,7 +4,7 @@ const info = {
     title: "Not In Vein",
     description: ["If you're someone who routinely donates blood or is interested in doing so, Not In Vein (NIV) is the application for you.", "We remind users of upcoming appointments and help them find nearby donation options. We also save important information such as most visited locations, when you can next donate, and more."],
     link: "https://github.com/JeffLi117/Not-In-Vein",
-    ImgSrc: "NIV_SS.png",
+    ImgSrc: "/NIV_SS.png",
     stack: ["JavaScript", "Next.js", "Express.js", "Tailwind CSS", "AWS"]
 }
 
@@ -24,7 +24,7 @@ function page() {
                 })}
             </ul>
             <img
-              src="NIV_SS.png"
+              src="/NIV_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

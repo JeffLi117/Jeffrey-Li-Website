@@ -25,7 +25,7 @@ export default function Navbar() {
                 aria-disabled={`${pathName === "/" ? "true" : ""}`} 
             >
                 <img
-                    src="Headshot_Mononoke_Square.jpg"
+                    src="/Headshot_Mononoke_Square.jpg"
                     className="rounded-full"
                     height={100}
                     width={100}
