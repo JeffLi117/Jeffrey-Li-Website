@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BackButton from "@/components/BackButton";
 
 const info = {
     title: "Not In Vein",
@@ -34,6 +35,7 @@ function page() {
                 <button type="button" className={`w-fit p-4 my-2 md:my-4 bg-purple-200 border border-white border-4 rounded-full hover:bg-white hover:border-purple-400 hover:text-purple-400 transition ease-in-out`}>Visit Site</button>
             </Link>
           </div>
+          <BackButton destination="projects" />
       </section>
     )
 }

@@ -1,3 +1,5 @@
+import BackButton from "@/components/BackButton"
+
 const info = {
     company: "Humanity Uplifting People",
     description: "Humanity Uplifting People is a charity whose mission is to provide practical support that helps people help themselves out of poverty.",
@@ -30,6 +32,7 @@ function page() {
             })}
           </ul>
         </div>
+        <BackButton destination="experience" />
     </section>
   )
 }

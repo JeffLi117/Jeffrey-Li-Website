@@ -1,3 +1,5 @@
+import BackButton from "@/components/BackButton"
+
 const info = {
     company: "OptiChroniX",
     description: "OptiChroniX is startup with a focus on addressing the intricate challenges of age-related cognitive decline. Their myAVOS app is crafted to revolutionize chronic care and optimize cognitive aging.",
@@ -33,6 +35,7 @@ function page() {
               })}
             </ul>
           </div>
+          <BackButton destination="experience" />
       </section>
     )
   }

@@ -1,3 +1,5 @@
+import BackButton from "@/components/BackButton"
+
 const info = {
     company: "One Community Global",
     description: "One Community Global is an open source project that aims to usher in a new age of cooperation, collaboration, and sustainability.",
@@ -31,6 +33,7 @@ function page() {
               })}
             </ul>
           </div>
+          <BackButton destination="experience" />
       </section>
     )
 }
