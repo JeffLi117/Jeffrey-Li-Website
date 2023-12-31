@@ -6,7 +6,7 @@ function BackButton({ destination }) {
         <span>
             <Link href={`/${destination}`}>
                 <IoArrowBackCircleOutline
-                    className="absolute bottom-1 right-2 z-30 text-black text-2xl md:text-3xl hover:scale-[1.15] hover:text-purple-700 transition ease-in-out"
+                    className="absolute top-3 right-3 z-30 text-black text-2xl md:text-3xl hover:scale-[1.15] hover:text-purple-700 transition ease-in-out"
                 />
             </Link>
         </span>

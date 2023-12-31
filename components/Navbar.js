@@ -1,20 +1,20 @@
-"use client";
-import { useState, useEffect } from "react";
+// "use client";
+// import { useState, useEffect } from "react";
 import Link from "next/link";
 import LightToggler from '@/components/LightToggler';
 
 export default function Navbar() {
 
-  const [pathName, setPathName] = useState(null)
+//   const [pathName, setPathName] = useState(null)
   
-  useEffect(() => {
-    // Split the pathname into an array of segments
-    var pathSegments = window.location.pathname.split("/");
+//   useEffect(() => {
+//     // Split the pathname into an array of segments
+//     var pathSegments = window.location.pathname.split("/");
 
-    // Get the root folder (the first segment)
-    var rootFolder = pathSegments[1]; // Index 0 is an empty string due to the leading slash
-    setPathName("/"+rootFolder);
-  }, [])
+//     // Get the root folder (the first segment)
+//     var rootFolder = pathSegments[1]; // Index 0 is an empty string due to the leading slash
+//     setPathName("/"+rootFolder);
+//   }, [])
   
 //   useEffect(() => {
 //     console.log("pathName is ", pathName);
@@ -25,9 +25,10 @@ export default function Navbar() {
         {/* <LightToggler /> */}
         <div className="flex justify-start items-center gap-2">
             <Link 
-                onClick={()=> setPathName("/")} href="/"
-                className={`${pathName === "/" ? "pointer-events-none" : ""}`} 
-                aria-disabled={`${pathName === "/" ? "true" : ""}`} 
+                // onClick={()=> setPathName("/")} 
+                href="/"
+                // className={`${pathName === "/" ? "pointer-events-none" : ""}`} 
+                // aria-disabled={`${pathName === "/" ? "true" : ""}`} 
             >
                 <img
                     src="/Headshot_Mononoke_Square.jpg"
@@ -39,9 +40,10 @@ export default function Navbar() {
             </Link>
             <div className="flex flex-col justify-start items-start gap-2">
                 <Link 
-                    onClick={()=> setPathName("/")} href="/"
-                    className={`${pathName === "/" ? "pointer-events-none" : ""}`} 
-                    aria-disabled={`${pathName === "/" ? "true" : ""}`} 
+                    // onClick={()=> setPathName("/")} 
+                    href="/"
+                    // className={`${pathName === "/" ? "pointer-events-none" : ""}`} 
+                    // aria-disabled={`${pathName === "/" ? "true" : ""}`} 
                 >
                     <div className="text-xl md:text-2xl">
                         <h1>Jeffrey Li</h1>
@@ -49,31 +51,34 @@ export default function Navbar() {
                     </div>
                 </Link>
                 <ul className="flex justify-start items-start gap-2 md:gap-4 text-xs md:text-base">
-                    <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${(pathName === "/experience" || pathName === "/experience/") ? "text-slate-400" : ""}`}>
+                    <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1`}>
                         <Link 
-                            onClick={()=> setPathName("/experience")} href="/experience"
-                            className={`${(pathName === "/experience" || pathName === "/experience/") ? "pointer-events-none" : ""}`} 
-                            aria-disabled={`${(pathName === "/experience" || pathName === "/experience/") ? "true" : ""}`} 
+                            // onClick={()=> setPathName("/experience")} 
+                            href="/experience"
+                            // className={`${(pathName === "/experience" || pathName === "/experience/") ? "pointer-events-none" : ""}`} 
+                            // aria-disabled={`${(pathName === "/experience" || pathName === "/experience/") ? "true" : ""}`} 
                         >
                             Experience
                         </Link>
                     </li>
                 
-                    <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${(pathName === "/projects" || pathName === "/projects/") ? "text-slate-400" : ""}`}>
+                    <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1`}>
                         <Link 
-                            onClick={()=> setPathName("/projects")} href="/projects"
-                            className={`${(pathName === "/projects" || pathName === "/projects/") ? "pointer-events-none" : ""}`} 
-                            aria-disabled={`${(pathName === "/projects" || pathName === "/projects/") ? "true" : ""}`} 
+                            // onClick={()=> setPathName("/projects")} 
+                            href="/projects"
+                            // className={`${(pathName === "/projects" || pathName === "/projects/") ? "pointer-events-none" : ""}`} 
+                            // aria-disabled={`${(pathName === "/projects" || pathName === "/projects/") ? "true" : ""}`} 
                         >
                             Projects
                         </Link>
                     </li>
                 
-                    <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1 ${(pathName === "/contact" || pathName === "/contact/") ? "text-slate-400" : ""}`}>
+                    <li className={`transition bg-transparent hover:bg-purple-200 ease-in-out rounded-md p-1`}>
                         <Link 
-                            onClick={()=> setPathName("/contact")} href="/contact"
-                            className={`${(pathName === "/contact" || pathName === "/contact/") ? "pointer-events-none" : ""}`} 
-                            aria-disabled={`${(pathName === "/contact" || pathName === "/contact/") ? "true" : ""}`} 
+                            // onClick={()=> setPathName("/contact")} 
+                            href="/contact"
+                            // className={`${(pathName === "/contact" || pathName === "/contact/") ? "pointer-events-none" : ""}`} 
+                            // aria-disabled={`${(pathName === "/contact" || pathName === "/contact/") ? "true" : ""}`} 
                         >
                             Contact
                         </Link>
