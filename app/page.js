@@ -2,7 +2,7 @@ import TypingEffect from "@/components/TypingEffect";
 
 export default function Home() {
   return (
-    <section className="relative h-full lg:leading-relaxed lg:text-lg 2xl:leading-loose pb-12 md:pb-8">
+    <section className="relative h-full lg:leading-relaxed lg:text-lg 2xl:leading-loose pb-16 md:pb-8">
       <div className="p-6 bg-purple-100 mt-8 md:mt-12 md:mb-4 rounded-lg lg:p-8">
         <div className="text-3xl mb-4 lg:text-5xl lg:mb-8">
           👋 Hi, I'm Jeffrey.
