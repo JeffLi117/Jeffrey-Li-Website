@@ -1,7 +1,5 @@
 "use client"
 import { useRef, useState, useEffect } from "react";
-import { LightAuth } from "./LightMode";
-import { sendEmail, verifyReCAPTCHA } from "@/app/actions";
 import { FaRegCheckCircle, FaRobot } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -67,28 +65,11 @@ function EmailMeForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
-    // console.log("captchaValue is ", captchaValue);
-    // console.log("typeof captchaValue is ", typeof captchaValue);
 
     // == Check honeypots ==
     if (formData.get("_honey") !== "" || formData.get("honey_2") !== "") {
       return;
     }
-
-    // try {
-    //   const token = await reCaptchaRef.current.executeAsync();    
-    //   const res = await verifyReCAPTCHA(token);
-    //   console.log("res from verifyReCAPTCHA ", res);
-    //   if (res?.success) {
-    //     setIsReCAPTCHAVerified(true);
-    //     reCaptchaRef.current.reset();
-    //   } else {
-    //     setSentResult(false)
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    //   setSentResult(false)
-    // }
 
     const name = formData.get("name");
     const email = formData.get("email");
@@ -152,30 +133,6 @@ function EmailMeForm() {
     return () => {};
   }, [isFormChecked, isFormValid, isReCAPTCHAVerified]);
 
-  // useEffect(() => {
-  //   const useEffectSubmit = async (data) => {
-  //     console.log("data is ", data);
-  //     try {
-  //       const response = await sendEmail(data);
-  //       console.log("response from await sendEmail ", response);
-  //       if (response?.success) {
-  //         setSentResult(true)
-  //       } else {
-  //         setSentResult(false)
-  //       }
-  //     } catch (err) {
-  //       console.log(err);
-  //       setSentResult(false)
-  //     }
-  //   }
-  //   if (isFormChecked && isFormValid && isReCAPTCHAVerified) { 
-  //     setErrors({});
-  //     console.log("both check & validation are true, as well as ReCAPTCHA!");
-  //     useEffectSubmit(submitForm);
-  //   } 
-  //   return () => {};
-  // }, [isFormChecked, isFormValid, isReCAPTCHAVerified])
-
   useEffect(() => {
     console.log("errors is now ", errors)
   }, [errors])
@@ -211,11 +168,6 @@ function EmailMeForm() {
             {((!(sentResult === true) && !(sentResult === false)) && isLoading === true) && <button type="button" className={`w-fit p-2 flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}>Sending...</button>}
             {sentResult === true && <button type="button" className={`w-fit p-2 flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}><FaRegCheckCircle /> Sent!</button>}
             {sentResult === false && <button type="button" className={`w-fit p-2 flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}><MdErrorOutline /> Oops! Something went wrong.</button>}
-            {/* <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
-              size="invisible"
-              ref={reCaptchaRef}
-            /> */}
         </form>
     </div>
     

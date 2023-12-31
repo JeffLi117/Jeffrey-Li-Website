@@ -1,6 +1,3 @@
-import OCG_SS from "../../../public/OCG_SS.png";
-import Image from "next/image";
-
 const info = {
     company: "One Community Global",
     description: "One Community Global is an open source project that aims to usher in a new age of cooperation, collaboration, and sustainability.",
@@ -11,7 +8,7 @@ const info = {
       "Collaborated and assisted in leading a diverse team in a React, Redux, Node.js, and MongoDB environment, significantly contributing to GitHub Pull Requests",
       "Consistently provide comprehensive weekly summary reports, videos, and snapshots of implemented changes, ensuring transparency, accountability, and improved project coordination"
     ],
-    ImgSrc: OCG_SS,
+    ImgSrc: "OCG_SS.png",
 }
 
 function page() {
@@ -20,8 +17,8 @@ function page() {
           <div className={`flex flex-col justify-start items-center gap-8 p-2`}>
             <div className="text-3xl text-bold mb-1">{info.company}</div>
             <div className="md:mb-4">{info.description}</div>
-            <Image
-              src={info.ImgSrc}
+            <img
+              src="OCG_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

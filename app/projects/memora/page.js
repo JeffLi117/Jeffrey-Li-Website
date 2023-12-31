@@ -1,12 +1,10 @@
-import Memora_SS from "../../../public/Memora_SS.png";
-import Image from "next/image";
 import Link from "next/link";
 
 const info = {
     title: "Memora",
     description: ["Memora is a note-taking app with reminders designed for forgetful people.", "With Firebase integration, easily sync and access your notes, tasks, and reminders from anywhere. The intuitive interface makes capturing and organizing information a breeze.", "Boost productivity and stay on top of tasks with Memora."],
     link: "https://memora-jeffli117.vercel.app/",
-    ImgSrc: Memora_SS,
+    ImgSrc: "Memora_SS.png",
     stack: ["JavaScript", "Sveltekit", "Firebase", "Flowbite"]
 }
 
@@ -25,8 +23,8 @@ function page() {
                     return <li key={index} className="flex justify-start items-center w-full md:w-fit gap-1 my-1 text-slate-600 list-none"><span>&#8250;</span> {detail}</li>
                 })}
             </ul>
-            <Image
-              src={info.ImgSrc}
+            <img
+              src="Memora_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

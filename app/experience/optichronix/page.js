@@ -1,6 +1,3 @@
-import OptiChroniX_SS from "../../../public/OptiChroniX_SS.png";
-import Image from "next/image";
-
 const info = {
     company: "OptiChroniX",
     description: "OptiChroniX is startup with a focus on addressing the intricate challenges of age-related cognitive decline. Their myAVOS app is crafted to revolutionize chronic care and optimize cognitive aging.",
@@ -13,7 +10,7 @@ const info = {
       "Collaborated with 4 developers by using a git version control feature branch strategy and documentation through Jira which increased productivity",
       "Implemented Jest unit testing to increase resiliency against multiple use cases, such as scenarios of user authentication and button-click interactions"
     ],
-    ImgSrc: OptiChroniX_SS,
+    ImgSrc: "OptiChroniX_SS.png",
 }
 
 function page() {
@@ -22,8 +19,8 @@ function page() {
           <div className={`flex flex-col justify-start items-center gap-8 p-2`}>
             <div className="text-3xl text-bold mb-1">{info.company}</div>
             <div className="md:mb-4">{info.description}</div>
-            <Image
-              src={info.ImgSrc}
+            <img
+              src="OptiChroniX_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"

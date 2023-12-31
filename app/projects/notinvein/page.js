@@ -1,12 +1,10 @@
-import NIV_SS from "../../../public/NIV_SS.png";
-import Image from "next/image";
 import Link from "next/link";
 
 const info = {
     title: "Not In Vein",
     description: ["If you're someone who routinely donates blood or is interested in doing so, Not In Vein (NIV) is the application for you.", "We remind users of upcoming appointments and help them find nearby donation options. We also save important information such as most visited locations, when you can next donate, and more."],
     link: "https://github.com/JeffLi117/Not-In-Vein",
-    ImgSrc: NIV_SS,
+    ImgSrc: "NIV_SS.png",
     stack: ["JavaScript", "Next.js", "Express.js", "Tailwind CSS", "AWS"]
 }
 
@@ -25,8 +23,8 @@ function page() {
                     return <li key={index} className="flex justify-start items-center w-full md:w-fit gap-1 my-1 text-slate-600 list-none"><span>&#8250;</span> {detail}</li>
                 })}
             </ul>
-            <Image
-              src={info.ImgSrc}
+            <img
+              src="NIV_SS.png"
               className="rounded-lg shadow-lg shadow-slate-500"
               height="100%"
               width="100%"
