@@ -5,6 +5,7 @@ import { sendEmail, verifyReCAPTCHA } from "@/app/actions";
 import { FaRegCheckCircle, FaRobot } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
 import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "@emailjs/browser";
 import 'dotenv/config';
 
 function EmailMeForm() {
@@ -13,6 +14,7 @@ function EmailMeForm() {
   const [isFormValid, setIsFormValid] = useState(false); 
   const [isFormChecked, setIsFormChecked] = useState(false); 
   const [isReCAPTCHAVerified, setIsReCAPTCHAVerified] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({}); 
   const [sentResult, setSentResult] = useState(); 
 
@@ -73,20 +75,20 @@ function EmailMeForm() {
       return;
     }
 
-    try {
-      const token = await reCaptchaRef.current.executeAsync();    
-      const res = await verifyReCAPTCHA(token);
-      console.log("res from verifyReCAPTCHA ", res);
-      if (res?.success) {
-        setIsReCAPTCHAVerified(true);
-        reCaptchaRef.current.reset();
-      } else {
-        setSentResult(false)
-      }
-    } catch (err) {
-      console.log(err);
-      setSentResult(false)
-    }
+    // try {
+    //   const token = await reCaptchaRef.current.executeAsync();    
+    //   const res = await verifyReCAPTCHA(token);
+    //   console.log("res from verifyReCAPTCHA ", res);
+    //   if (res?.success) {
+    //     setIsReCAPTCHAVerified(true);
+    //     reCaptchaRef.current.reset();
+    //   } else {
+    //     setSentResult(false)
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+    //   setSentResult(false)
+    // }
 
     const name = formData.get("name");
     const email = formData.get("email");
@@ -97,36 +99,82 @@ function EmailMeForm() {
     // Validate form 
     validateForm(name, email, message); 
     // Set final form to be submitted
+    // console.log("reCaptchaRef.current.props.sitekey is ", reCaptchaRef.current.props.sitekey);
+    if (reCaptchaRef.current.props.sitekey) {
+      setIsReCAPTCHAVerified(true)
+    }
     setSubmitForm({
       name: name,
       email: email,
       message: message,
     })
   }
-
+  
   useEffect(() => {
-    const useEffectSubmit = async (data) => {
-      console.log("data is ", data);
-      try {
-        const response = await sendEmail(data);
-        console.log("response from await sendEmail ", response);
-        if (response?.success) {
-          setSentResult(true)
-        } else {
-          setSentResult(false)
+    const sendEmailAsync = async () => {
+      if (isFormChecked && isFormValid && isReCAPTCHAVerified) {
+        setIsLoading(true);
+        setErrors({});
+        try {
+          const reCaptchaPayload = reCaptchaRef.current.getValue();
+          console.log("both check & validation (& reCAPTCHA) are true!");
+          const response = await emailjs.send(
+            'service_w33m2bx', // paste your ServiceID here
+            'template_9h2mcrq', // paste your TemplateID here
+            {
+              from_name: submitForm.name,
+              to_name: 'Jeffrey Li', // put your name here.
+              from_email: submitForm.email,
+              to_email: 'jeffrey.t.li.work@gmail.com', // put your email here.
+              message: submitForm.message,
+              'g-recaptcha-response': reCaptchaPayload,
+            },
+            '0sBHqADYkt_jck6OS' // paste Public Key here
+          );
+          setSentResult(true);
+          alert('Thank you. I will get back to you as soon as possible.');
+  
+          setSubmitForm({
+            name: '',
+            email: '',
+            message: '',
+          });
+        } catch (error) {
+          console.log(error);
+          setSentResult(false);
+          alert('Something went wrong. Please try again.');
         }
-      } catch (err) {
-        console.log(err);
-        setSentResult(false)
       }
-    }
-    if (isFormChecked && isFormValid && isReCAPTCHAVerified) { 
-      setErrors({});
-      console.log("both check & validation are true, as well as ReCAPTCHA!");
-      useEffectSubmit(submitForm);
-    } 
+    };
+  
+    sendEmailAsync();
+  
     return () => {};
-  }, [isFormChecked, isFormValid, isReCAPTCHAVerified])
+  }, [isFormChecked, isFormValid, isReCAPTCHAVerified]);
+
+  // useEffect(() => {
+  //   const useEffectSubmit = async (data) => {
+  //     console.log("data is ", data);
+  //     try {
+  //       const response = await sendEmail(data);
+  //       console.log("response from await sendEmail ", response);
+  //       if (response?.success) {
+  //         setSentResult(true)
+  //       } else {
+  //         setSentResult(false)
+  //       }
+  //     } catch (err) {
+  //       console.log(err);
+  //       setSentResult(false)
+  //     }
+  //   }
+  //   if (isFormChecked && isFormValid && isReCAPTCHAVerified) { 
+  //     setErrors({});
+  //     console.log("both check & validation are true, as well as ReCAPTCHA!");
+  //     useEffectSubmit(submitForm);
+  //   } 
+  //   return () => {};
+  // }, [isFormChecked, isFormValid, isReCAPTCHAVerified])
 
   useEffect(() => {
     console.log("errors is now ", errors)
@@ -158,14 +206,16 @@ function EmailMeForm() {
               {(errors.message) && <p className="text-red">{errors.message}</p>} 
             </div>
             
-            {(sentResult === true || sentResult === false) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-4 rounded-full hover:bg-white hover:border-purple-400 hover:text-purple-400 transition ease-in-out`}>Send Message</button>}
+            <ReCAPTCHA ref={reCaptchaRef} sitekey={process.env.NEXT_PUBLIC_SITE_KEY} />
+            {(sentResult === true || sentResult === false || isLoading === true) ? null : <button type="submit" className={`w-fit p-2 bg-purple-200 border border-white border-4 rounded-full hover:bg-white hover:border-purple-400 hover:text-purple-400 transition ease-in-out`}>Send Message</button>}
+            {((!(sentResult === true) && !(sentResult === false)) && isLoading === true) && <button type="button" className={`w-fit p-2 flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}>Sending...</button>}
             {sentResult === true && <button type="button" className={`w-fit p-2 flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}><FaRegCheckCircle /> Sent!</button>}
             {sentResult === false && <button type="button" className={`w-fit p-2 flex justify-center items-center gap-1 border bg-purple-200 border-white border-4 rounded-full`}><MdErrorOutline /> Oops! Something went wrong.</button>}
-            <ReCAPTCHA
+            {/* <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
               size="invisible"
               ref={reCaptchaRef}
-            />
+            /> */}
         </form>
     </div>
     

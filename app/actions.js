@@ -20,15 +20,10 @@ export async function sendEmail(data) {
         </div>
       `,
     };
-    console.log(msg);
     try{
-      console.log('sgMail started');
       const res = await sgMail.send(msg);
-      console.log('sgMail finished');
-      console.log('res[0].statusCode ', res[0].statusCode);
       return {success: res[0].statusCode}
     } catch (err) {
-      console.log(err);
       return { error: err.message };
     } 
 }
@@ -36,16 +31,11 @@ export async function sendEmail(data) {
 export async function verifyReCAPTCHA(captchaValue) {
   const SITE_SECRET = process.env.SITE_SECRET;
   try{
-    console.log('verifyReCAPTCHA started');
     const { data } = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${SITE_SECRET}&response=${captchaValue}`
     );
-    console.log('verifyReCAPTCHA finished');
-    console.log('data ', data);
     return {success: data}
   } catch (err) {
-    console.log(err);
     return { error: err.message };
   } 
-  
 }

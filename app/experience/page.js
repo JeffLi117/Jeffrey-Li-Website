@@ -1,8 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import OptiChroniX_SS from "../../public/OptiChroniX_SS.png";
-import HUP_SS from "../../public/HUP_SS.png";
-import OCG_SS from "../../public/OCG_SS.png";
 
 export const WorkInfo = [
   {

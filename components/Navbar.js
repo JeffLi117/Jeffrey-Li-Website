@@ -1,7 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Headshot_Mononoke_Square from "../public/Headshot_Mononoke_Square.jpg";
-import Image from "next/image";
 import Link from "next/link";
 import LightToggler from '@/components/LightToggler';
 

@@ -1,8 +1,4 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import Finding_Friends_SS from "../../public/Finding_Friends_SS.png";
-import Memora_SS from "../../public/Memora_SS.png";
-import NIV_SS from "../../public/NIV_SS.png";
 
 const ProjectInfo = [
     {
