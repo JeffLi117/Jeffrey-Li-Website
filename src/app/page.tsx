@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Space_Mono } from "next/font/google";
 import Image from 'next/image'

@@ -1,6 +1,6 @@
 "use client"
 import { useRef, useState, useEffect } from "react";
-import { FaRegCheckCircle, FaRobot } from "react-icons/fa";
+import { FaRegCheckCircle } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
