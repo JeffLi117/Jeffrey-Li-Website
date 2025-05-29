@@ -43,7 +43,7 @@ function EmailMeForm() {
 
   // == Validate form ==
   const validateForm = (name: string, email: string, message: string) => { 
-    let errors: Record<string, string> = {}; 
+    const errors: Record<string, string> = {}; 
 
     if (!name) { 
       errors.name = 'Name is required.'; 
@@ -102,7 +102,7 @@ function EmailMeForm() {
         try {
           const reCaptchaPayload = reCaptchaRef.current.getValue();
           console.log("both check & validation (& reCAPTCHA) are true!");
-          const response = await emailjs.send(
+          await emailjs.send(
             'service_w33m2bx', // paste your ServiceID here
             'template_9h2mcrq', // paste your TemplateID here
             {
