@@ -1,7 +1,6 @@
 "use client";
 import { TypeAnimation } from "react-type-animation";
 import { Space_Mono } from "next/font/google";
-import Image from 'next/image'
 import { FaLinkedin } from "react-icons/fa";
 
 const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
@@ -34,7 +33,7 @@ export default function Home() {
       <section id="about" className="min-h-screen flex flex-col justify-center items-center py-24 bg-gradient-to-br from-purple-900/80 via-black/80 to-purple-950/90">
         <h2 className={`text-4xl font-bold mb-6 text-purple-300 ${spaceMono.className}`}>About Me</h2>
         <div className="flex flex-row gap-4 justify-center items-center">
-          <Image
+          <img
             src="/headshot.jpeg"
             width={300}
             height={300}
